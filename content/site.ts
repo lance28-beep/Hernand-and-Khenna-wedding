@@ -62,13 +62,10 @@ export const siteConfig = {
     bride: `Khenna is loving and selfless, the calm in the midst of chaos. She is the light that softens him — a dreamer who inspires Hernand to reach even greater heights. Her presence adds color and flavor to his life, turning ordinary moments into something extraordinary. To him, she is not just a partner, but the heart that makes life beautiful.`,
 
     // Shared love story – combined narrative
-    shared: `Hernand and Khenna first crossed paths as classmates in college, sharing classrooms, stories, and small moments that would linger quietly in their memories long after life led them on separate journeys. In those early days, they were two dreamers walking parallel roads — learning, growing, and discovering who they were meant to become. Hernand pursued his calling in the academy, while Khenna continued to chase her own aspirations, each carrying an unspoken tenderness for a chapter that seemed to have closed too soon.
-
-Years later, as if the universe had patiently waited for the right time, their paths crossed once more. What began as a simple reconnection — a message, a conversation, a familiar presence — gently unfolded into something deeper. There was no rush, no force, no pretense; their bond was effortless, their connection organic. Laughter felt lighter, conversations flowed more freely, and every shared moment carried the warmth of coming home.
-
-Slowly, the friendship they once knew blossomed into an unexpected love story. What they had in college was no longer just a sweet memory; it became the foundation of a love built on understanding, shared values, and quiet support. Everything fell heavenly into place, as though the years in between had only been preparation for the forever they were meant to find in each other.
-
-Today, as they stand on the threshold of marriage, Hernand and Khenna look back with grateful hearts — for the first hello in a college classroom, for the seasons spent apart, and for the gentle, faithful way their story found its way back to love, in God’s perfect time.`,
+    shared: `From Classmates to Forever
+Where it all began…
+Hernand and Khenna first crossed paths as classmates in college, sharing dreams and laughter before life led them on separate journeys. Hernand pursued his calling in the academy, while Khenna continued to chase her own aspirations.
+Years later, fate brought them back together—and what started as a simple reconnection blossomed into an unexpected love story. Their bond was effortless, their connection organic, and everything fell heavenly into place, as if the universe had been quietly writing their story all along.`,
   },
   colors: {
     primary: "#4A7C59",
