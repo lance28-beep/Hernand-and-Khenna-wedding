@@ -56,7 +56,7 @@ export const siteConfig = {
   },
   narratives: {
     // Groom – personal portrait
-    groom: `Hernand is a man with a sharp, analytical mind and an insatiable love for learning. Calm and composed, he carries a firm sense of responsibility and an extraordinary patience that makes him a true pillar of strength. He is the protector of her peace, the believer in her wildest dreams, and a soul whose spirit balances strength with gentleness. To her, he is both a partner and an anchor — someone who steadies her in life’s storms while inspiring her to soar.`,
+    groom: `Hernand is calm and composed, grounded by a deep sense of responsibility and an extraordinary patience that makes him a true pillar of strength. He is the protector of her peace, the steadfast believer in her wildest dreams, and a soul where quiet strength meets genuine gentleness. To her, he is both partner and anchor—someone who steadies her through life’s storms while encouraging her to rise, dream, and soar.`,
 
     // Bride – personal portrait
     bride: `Khenna is loving and selfless, the calm in the midst of chaos. She is the light that softens him — a dreamer who inspires Hernand to reach even greater heights. Her presence adds color and flavor to his life, turning ordinary moments into something extraordinary. To him, she is not just a partner, but the heart that makes life beautiful.`,

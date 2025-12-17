@@ -652,30 +652,13 @@ export function GuestList() {
                     
                     {/* Title */}
                     <h4 className="text-base sm:text-lg md:text-xl lg:text-2xl font-serif font-bold text-white mb-2 sm:mb-3">
-                      RSVP Confirmed!
+                      Thank you so much for confirming your RSVP!
                     </h4>
                     
-                    {/* Message based on RSVP response */}
-                    {formData.RSVP === "Yes" && (
-                      <div className="space-y-1 sm:space-y-1.5 mb-2 sm:mb-3">
-                        <p className="text-white/95 text-xs sm:text-sm font-medium">
-                          We're thrilled you'll be joining us!
-                        </p>
-                        <p className="text-white/80 text-[10px] sm:text-xs">
-                          Your response has been recorded
-                        </p>
-                      </div>
-                    )}
-                    {formData.RSVP === "No" && (
-                      <p className="text-white/90 text-xs sm:text-sm mb-2 sm:mb-3">
-                        We'll miss you, but thank you for letting us know.
-                      </p>
-                    )}
-                    {!formData.RSVP && (
-                      <p className="text-white/90 text-xs sm:text-sm mb-2 sm:mb-3">
-                        Thank you for your response!
-                      </p>
-                    )}
+                    {/* Message */}
+                    <p className="text-white/90 text-xs sm:text-sm mb-2 sm:mb-3">
+                      We are truly delighted to know you'll be celebrating this special day with us and can't wait to share these joyful moments together.
+                    </p>
                     
                     {/* Subtle closing indicator */}
                     <div className="flex items-center justify-center gap-1 sm:gap-1.5 mt-2 sm:mt-3">
