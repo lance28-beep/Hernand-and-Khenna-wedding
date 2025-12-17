@@ -130,7 +130,7 @@ export function Footer() {
           <p
             className={`${cormorant.className} tracking-[0.3em] text-[10px] sm:text-xs md:text-sm text-[#F0F0EE]/95`}
           >
-            Marzan and Nica
+            {siteConfig.couple.groomNickname} and {siteConfig.couple.brideNickname}
           </p>
           <p
             className={`${cormorant.className} text-xs sm:text-sm md:text-base text-[#F0F0EE]/90 mt-1`}
@@ -176,14 +176,16 @@ export function Footer() {
             </motion.div>
           </motion.div>
 
-          {/* Event Details quick tiles */}
+          {/* Event Details quick tile (Ceremony & Reception combined) */}
           <motion.div className="space-y-4 sm:space-y-5 md:space-y-6" variants={fadeInUp}>
             <motion.div className="bg-white/8 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-[#E0CFB5]/60 hover:bg-white/14 transition-all duration-300 shadow-[0_14px_40px_rgba(0,0,0,0.35)]" whileHover={{ y: -5 }}>
               <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3 mb-3 sm:mb-3.5 md:mb-4">
                 <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-[#F0F0EE]/15 rounded-full flex items-center justify-center border border-[#E0CFB5]/70 flex-shrink-0">
                   <Clock className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 text-[#F0F0EE]" />
                 </div>
-                <h4 className={`${cormorant.className} font-semibold text-base sm:text-lg md:text-xl text-white`}>Ceremony</h4>
+                <h4 className={`${cormorant.className} font-semibold text-base sm:text-lg md:text-xl text-white`}>
+                  Ceremony &amp; Reception
+                </h4>
               </div>
               <div className={`space-y-2 sm:space-y-2.5 md:space-y-3 ${cormorant.className} text-[#F0F0EE]/95 text-xs sm:text-sm`}>
                 <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3">
@@ -192,26 +194,11 @@ export function Footer() {
                 </div>
                 <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3">
                   <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#F0F0EE] flex-shrink-0" />
-                  <span>{ceremonyTime}</span>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div className="bg-white/8 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-[#E0CFB5]/60 hover:bg-white/14 transition-all duration-300 shadow-[0_14px_40px_rgba(0,0,0,0.35)]" whileHover={{ y: -5 }}>
-              <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3 mb-3 sm:mb-3.5 md:mb-4">
-                <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-[#F0F0EE]/15 rounded-full flex items-center justify-center border border-[#E0CFB5]/70 flex-shrink-0">
-                  <Heart className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 text-[#F0F0EE]" fill="#D1AB6D" />
-                </div>
-                <h4 className={`${cormorant.className} font-semibold text-base sm:text-lg md:text-xl text-white`}>Reception</h4>
-              </div>
-              <div className={`space-y-2 sm:space-y-2.5 md:space-y-3 ${cormorant.className} text-[#F0F0EE]/95 text-xs sm:text-sm`}>
-                <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3">
-                  <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#F0F0EE] flex-shrink-0" />
-                  <span>{receptionVenue}</span>
+                  <span>Ceremony: {ceremonyTime}</span>
                 </div>
                 <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3">
                   <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#F0F0EE] flex-shrink-0" />
-                  <span>{receptionTime}</span>
+                  <span>Reception: {receptionTime}</span>
                 </div>
               </div>
             </motion.div>

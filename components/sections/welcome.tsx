@@ -38,60 +38,44 @@ export function Welcome() {
           </div>
 
           <div className="relative text-center space-y-6 sm:space-y-7 md:space-y-8">
-          {/* Main heading */}
-          <div className="space-y-1.5 sm:space-y-2.5">
-            <p
-              className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] text-[#FDECEF]/85`}
-              style={{ textShadow: "0 2px 10px rgba(0,0,0,0.6)" }}
-            >
-              Marzan &amp; Nica
-            </p>
-            <h2
-              className="style-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-[2.9rem] text-white"
-              style={{ textShadow: "0 4px 18px rgba(0,0,0,0.85)" }}
-            >
-              Welcome to our wedding website
-            </h2>
-
-            {/* Verse */}
-            <div className="space-y-1">
+            {/* Main heading */}
+            <div className="space-y-1.5 sm:space-y-2.5">
               <p
-                className={`${cormorant.className} text-xs sm:text-sm md:text-base text-white/90 italic`}
+                className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] text-[#FDECEF]/85`}
                 style={{ textShadow: "0 2px 10px rgba(0,0,0,0.6)" }}
               >
-                &quot;Love is patient, love is kind. It does not envy, it does not boast, it is not proud… It always protects, always trusts, always hopes, always perseveres.&quot;
+                Hernand &amp; Khenna
               </p>
-              <p
-                className={`${cormorant.className} text-[0.65rem] sm:text-xs md:text-sm text-white/80 tracking-[0.2em] uppercase`}
-                style={{ textShadow: "0 2px 8px rgba(0,0,0,0.55)" }}
+              <h2
+                className="style-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-[2.9rem] text-white"
+                style={{ textShadow: "0 4px 18px rgba(0,0,0,0.85)" }}
               >
-                1 Corinthians 13:4–7 (NIV)
+                A Celebration of Love, Life, and Forever
+              </h2>
+
+              {/* Divider */}
+              <div className="flex items-center justify-center gap-2 pt-2">
+                <span className="h-px w-10 sm:w-16 md:w-20 bg-white/30" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#D1AB6D] shadow-[0_0_14px_rgba(209,171,109,0.9)]" />
+                <span className="h-px w-10 sm:w-16 md:w-20 bg-white/30" />
+              </div>
+            </div>
+
+            {/* Body text */}
+            <div
+              className={`${cormorant.className} text-[0.85rem] sm:text-sm md:text-base leading-relaxed sm:leading-7 text-white/95 space-y-3 sm:space-y-4`}
+            >
+              <p>
+                We have been blessed with a love that feels like home — steady, enduring, and filled with grace. With
+                hearts full of gratitude, we invite you to witness this new chapter as we promise each other a forever
+                rooted in faith, friendship, and family.
+              </p>
+              <p>
+                Here, you&apos;ll find everything you need to join us — from our story, to the details of the ceremony
+                and celebration. Thank you for your love, prayers, and presence in our lives. We cannot wait to share
+                this special day with you.
               </p>
             </div>
-
-            {/* Divider */}
-            <div className="flex items-center justify-center gap-2 pt-1">
-              <span className="h-px w-10 sm:w-16 md:w-20 bg-white/30" />
-              <span className="w-1.5 h-1.5 rounded-full bg-[#D1AB6D] shadow-[0_0_14px_rgba(209,171,109,0.9)]" />
-              <span className="h-px w-10 sm:w-16 md:w-20 bg-white/30" />
-            </div>
-          </div>
-
-          {/* Body text */}
-          <div
-            className={`${cormorant.className} text-[0.85rem] sm:text-sm md:text-base leading-relaxed sm:leading-7 text-white/95 space-y-3 sm:space-y-4`}
-          >
-            <p>
-              We&apos;ve found a love that&apos;s a true blessing, and we give thanks to God for writing the
-              beautiful story of our journey together. With hearts full of gratitude, we&apos;re excited to share
-              this blessing with you! Thank you for your love, prayers, and support. We can&apos;t wait to celebrate
-              this joyful day together!
-            </p>
-            <p>
-              Feel free to browse through important information and other helpful reminders — everything you
-              need to join us in this celebration!
-            </p>
-          </div>
           </div>
         </div>
       </div>

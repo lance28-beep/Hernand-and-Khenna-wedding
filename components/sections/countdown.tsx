@@ -37,14 +37,14 @@ function CountdownUnit({ value, label }: CountdownUnitProps) {
 
         {/* Main card */}
         <div className="relative rounded-xl sm:rounded-2xl border border-white/40/80 bg-white/95/90 px-2.5 py-2.5 sm:px-3.5 sm:py-3.5 md:px-4 md:py-4 shadow-[0_12px_32px_rgba(0,0,0,0.45)]">
-          <div className="relative z-10 flex items-center justify-center countdown-gradient-text">
+          <div className="relative z-10 flex items-center justify-center">
             <Counter
               value={value}
               places={places}
               fontSize={26}
               padding={4}
               gap={2}
-              textColor="transparent"
+              textColor="#FFE4E4"
               fontWeight={800}
               borderRadius={6}
               horizontalPadding={3}
@@ -159,8 +159,6 @@ export function Countdown() {
       id="countdown"
       className="relative bg-transparent py-10 sm:py-12 md:py-16 lg:py-20 overflow-hidden"
     >
-      {/* Clean background with solid burgundy tone (no extra overlays) */}
-
       {/* Monogram - centered at top */}
       <div className="relative flex justify-center pt-8 sm:pt-10 md:pt-12 mb-6 sm:mb-8 md:mb-10 z-10">
         <motion.div
@@ -169,29 +167,39 @@ export function Countdown() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="relative"
         >
-          <div className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] lg:w-[36rem] lg:h-[36rem] xl:w-[40rem] xl:h-[40rem] opacity-90">
+          <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 opacity-95">
             <Image
-              src="/monogram/monogram counter.png"
-              alt="Marzan & Nica Monogram"
+              src="/monogram/newmonogram.png"
+              alt={`${siteConfig.couple.groomNickname} & ${siteConfig.couple.brideNickname} Monogram`}
               fill
               className="object-contain"
               style={{
-                filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.6))",
+                // Force the monogram artwork to render as pure white while keeping the soft shadow
+                filter:
+                  "brightness(0) invert(1) drop-shadow(0 8px 24px rgba(0,0,0,0.6))",
               }}
               priority={false}
             />
             {/* Glow effect behind monogram */}
-            <div className="absolute inset-0 blur-3xl bg-[#9B7C6A]/25 -z-10 scale-125" />
+            <div className="absolute inset-0 blur-3xl bg-[#FFE4E4]/28 -z-10 scale-125" />
           </div>
         </motion.div>
       </div>
 
       {/* Header */}
       <div className="relative z-10 text-center mb-6 sm:mb-8 md:mb-10 px-3 sm:px-4">
+        {/* Couple names */}
+        <p
+          className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] text-[#FDECEF]/85`}
+          style={{ textShadow: "0 2px 10px rgba(0,0,0,0.6)" }}
+        >
+          {siteConfig.couple.groomNickname} &amp; {siteConfig.couple.brideNickname}
+        </p>
+
         {/* Decorative element above title */}
-        <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
+        <div className="flex items-center justify-center gap-2 my-3 sm:my-4">
           <div className="w-8 sm:w-12 md:w-16 h-px bg-white/25" />
-          <div className="w-1.5 h-1.5 bg-gradient-to-br from-[#F7DC63] to-[#DEB73E] rounded-full shadow-[0_0_12px_rgba(247,220,99,0.9)]" />
+          <div className="w-1.5 h-1.5 bg-[#FFE4E4] rounded-full shadow-[0_0_12px_rgba(255,228,228,0.9)]" />
           <div className="w-8 sm:w-12 md:w-16 h-px bg-white/25" />
         </div>
         
@@ -200,7 +208,7 @@ export function Countdown() {
         </h2>
         
         <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/95 font-light max-w-xl mx-auto leading-relaxed px-2">
-          Every moment, every breath, every heartbeat brings us closer to the day when two hearts become one. Join Marzan and Nica as they count down to forever.
+          Every moment, every breath, every heartbeat brings us closer to the day when two hearts become one.
         </p>
         
         {/* Decorative element below subtitle */}
@@ -259,19 +267,16 @@ export function Countdown() {
                     <div className="relative flex items-center justify-center px-3 sm:px-4 md:px-5">
                       <span
                         aria-hidden="true"
-                        className="absolute inset-0 mx-auto h-[70%] max-h-[180px] w-[100px] sm:w-[140px] md:w-[170px] rounded-full bg-gradient-to-b from-[#F7DC63]/30 via-[#DEB73E]/20 to-transparent blur-[28px] opacity-80"
+                        className="absolute inset-0 mx-auto h-[70%] max-h-[180px] w-[100px] sm:w-[140px] md:w-[170px] rounded-full bg-[#FFE4E4]/35 blur-[28px] opacity-80"
                       />
                       <span
                         className="relative text-[3rem] sm:text-[4.5rem] md:text-[5.5rem] lg:text-[6rem] font-light leading-none tracking-wider"
                         style={{
-                          background: "linear-gradient(180deg, #F7DC63 0%, #DEB73E 100%)",
-                          WebkitBackgroundClip: "text",
-                          WebkitTextFillColor: "transparent",
-                          backgroundClip: "text",
+                          color: "#FFE4E4",
                           textShadow:
-                            "0 0 20px rgba(247,220,99,0.5), 0 0 40px rgba(222,183,62,0.4), 0 4px 20px rgba(0,0,0,0.6)",
+                            "0 0 20px rgba(255,228,228,0.6), 0 0 40px rgba(255,228,228,0.45), 0 4px 20px rgba(0,0,0,0.7)",
                           filter:
-                            "drop-shadow(0 0 30px rgba(247,220,99,0.6)) drop-shadow(0 0 50px rgba(222,183,62,0.5))",
+                            "drop-shadow(0 0 30px rgba(255,228,228,0.65)) drop-shadow(0 0 50px rgba(255,228,228,0.5))",
                         }}
                       >
                         {ceremonyDayNumber.padStart(2, "0")}

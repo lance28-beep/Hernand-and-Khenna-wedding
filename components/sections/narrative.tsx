@@ -3,35 +3,31 @@
 import { useState } from "react"
 import { Section } from "@/components/section"
 import { siteConfig } from "@/content/site"
-import Stack from "@/components/stack"
 import { motion } from "motion/react"
-import Image from "next/image"
-import { Cormorant_Garamond, WindSong } from "next/font/google"
+import { Cormorant_Garamond } from "next/font/google"
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
 })
 
-const windSong = WindSong({
-  subsets: ["latin"],
-  weight: "400",
-})
+const getParagraphs = (text?: string) =>
+  text
+    ?.trim()
+    .split(/\n\s*\n/)
+    .filter(Boolean) ?? []
 
-const storyTabs = [
-  { id: "groom", label: "Marzan's Story", subtitle: "His side of forever" },
-  { id: "bride", label: "Nica's Story", subtitle: "Her side of forever" },
-] as const
-
-type StoryTabId = (typeof storyTabs)[number]["id"]
+type ActivePerson = "bride" | "groom"
 
 export function Narrative() {
-  const [activeStory, setActiveStory] = useState<StoryTabId>("groom")
-  const storyParagraphs =
-    siteConfig.narratives?.[activeStory]
-      ?.trim()
-      .split(/\n\s*\n/)
-      .filter(Boolean) ?? []
+  const [activePerson, setActivePerson] = useState<ActivePerson>("bride")
+  const brideParagraphs = getParagraphs(siteConfig.narratives?.bride)
+  const groomParagraphs = getParagraphs(siteConfig.narratives?.groom)
+  const sharedParagraphs = getParagraphs(siteConfig.narratives?.shared)
+
+  const activeParagraphs = activePerson === "bride" ? brideParagraphs : groomParagraphs
+  const activeLabel = activePerson === "bride" ? "The Bride" : "The Groom"
+  const activeName = activePerson === "bride" ? siteConfig.couple.brideNickname : siteConfig.couple.groomNickname
 
   return (
     <Section
@@ -59,17 +55,12 @@ export function Narrative() {
           transition={{ duration: 0.6 }}
         >
           <div className="space-y-2 sm:space-y-3">
-            <p
-              className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] text-white`}
-              style={{ textShadow: "0 2px 10px rgba(0,0,0,0.75)" }}
-            >
-              Marzan &amp; Nica&apos;s Love Story
-            </p>
+      
             <h2
               className="style-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white"
               style={{ textShadow: "0 4px 18px rgba(0,0,0,0.85)" }}
             >
-              When Two Stories Became One
+              Meet the Couple &amp; Love Story
             </h2>
 
             {/* Decorative flourish */}
@@ -88,124 +79,110 @@ export function Narrative() {
           </div>
         </motion.div>
 
-        {/* Main Content - Centered Layout */}
+        {/* Meet the Couple – text with toggle */}
         <motion.div 
-          className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-10 items-center lg:items-start"
+          className="mt-8 md:mt-12 max-w-3xl mx-auto space-y-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {/* Left Spacer */}
-          <div className="hidden lg:block"></div>
-
-          {/* Interactive Stack Component - Center */}
-          <div className="flex justify-center">
-            <div className="relative">
-              {/* Enhanced glow effect with sage & champagne motif */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#909E8D]/28 via-[#E0CFB5]/24 to-[#F0F0EE]/30 rounded-full blur-3xl -z-10 w-full h-full max-w-sm animate-pulse" />
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#525E2C]/30 via-transparent to-[#D1AB6D]/22 rounded-full blur-2xl -z-10 w-full h-full max-w-sm" />
-              <div className="absolute inset-0 bg-gradient-to-bl from-[#909E8D]/20 via-transparent to-[#E0CFB5]/18 rounded-full blur-xl -z-10 w-full h-full max-w-sm" />
-
-              <Stack
-                randomRotation={true}
-                sensitivity={180}
-                sendToBackOnClick={false}
-                cardDimensions={{ width: 240, height: 280 }}
-                cardsData={[
-                  { id: 1, img: "/mobile-background/couple (7).jpg" },
-                  { id: 2, img: "/mobile-background/couple (11).jpg" },
-                  { id: 3, img: "/mobile-background/couple (10).jpg" },
-                  { id: 4, img: "/mobile-background/couple (9).jpg" },
-                  { id: 5, img: "/mobile-background/couple (5).jpg" },
-                  { id: 6, img: "/mobile-background/couple (4).jpg" },
-
-                ]}
-                animationConfig={{ stiffness: 260, damping: 20 }}
-              />
-
-              <motion.p 
-                className="text-center text-xs md:text-sm text-white mt-4 font-sans font-medium tracking-wide"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 1 }}
-              >
-                <span className="text-[#D1AB6D]">✨</span> Drag to explore our moments <span className="text-[#D1AB6D]">✨</span>
-              </motion.p>
-            </div>
-          </div>
-
-          {/* Right Spacer */}
-          <div className="hidden lg:block"></div>
-        </motion.div>
-
-        {/* Story Text + Tabs */}
-        <motion.div 
-          className="mt-10 md:mt-16 max-w-4xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <div className="flex flex-col items-center text-center gap-3 md:gap-5 mb-8 md:mb-12">
-            <p className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm text-white tracking-[0.16em] uppercase`}>
-              Two hearts, one promise
+          {/* Meet the Couple */}
+          <section className="space-y-6">
+            <p
+              className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm text-white tracking-[0.16em] uppercase text-center`}
+            >
+              Meet the Couple
             </p>
-            {/* Tabs - compact single row with gentle wrapping on very small screens */}
-            <div className="relative inline-flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1.5 sm:gap-x-2 sm:gap-y-1 rounded-full border border-white/20 bg-black/15 backdrop-blur-sm px-1.5 py-1.5 max-w-full">
-              {storyTabs.map((tab) => {
-                const isActive = tab.id === activeStory
-                return (
-                  <motion.button
-                    key={tab.id}
-                    type="button"
-                    onClick={() => setActiveStory(tab.id)}
-                    className={`relative px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[0.7rem] sm:text-xs md:text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#D1AB6D] focus-visible:ring-offset-[#525E2C] ${
-                      isActive
-                        ? "bg-[#E0CFB5]/25 text-white shadow-xl shadow-black/40 border border-[#D1AB6D]/70"
-                        : "text-white/80 hover:text-white border border-transparent"
-                    }`}
-                    aria-pressed={isActive}
-                    aria-controls="story-panel"
-                    whileTap={{ scale: 0.96 }}
-                  >
-                    <span className="block leading-snug">{tab.label}</span>
-                    <span className="text-[0.55rem] sm:text-[0.6rem] uppercase tracking-[0.16em] font-normal text-white/80">
-                      {tab.subtitle}
-                    </span>
-                  </motion.button>
-                )
-              })}
-            </div>
-          </div>
 
-          <div id="story-panel" className="space-y-4 md:space-y-6" aria-live="polite">
-            {storyParagraphs.map((paragraph, index) => (
-              <motion.div 
-                key={index} 
-                className="relative"
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+            {/* Toggle buttons */}
+            <div className="flex justify-center">
+              <div className="inline-flex items-center gap-1 rounded-full bg-black/20 border border-white/20 p-1">
+                <button
+                  type="button"
+                  onClick={() => setActivePerson("bride")}
+                  className={`px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all ${
+                    activePerson === "bride"
+                      ? "bg-white text-[#3D4636] shadow-md"
+                      : "text-white/80 hover:text-white"
+                  }`}
+                >
+                  <span className="block text-[0.65rem] uppercase tracking-[0.18em]">
+                    The Bride
+                  </span>
+                  <span className="style-script-regular text-lg leading-none">
+                    {siteConfig.couple.brideNickname}
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActivePerson("groom")}
+                  className={`px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all ${
+                    activePerson === "groom"
+                      ? "bg-white text-[#3D4636] shadow-md"
+                      : "text-white/80 hover:text-white"
+                  }`}
+                >
+                  <span className="block text-[0.65rem] uppercase tracking-[0.18em]">
+                    The Groom
+                  </span>
+                  <span className="style-script-regular text-lg leading-none">
+                    {siteConfig.couple.groomNickname}
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            {/* Active bio */}
+            <div className="space-y-2 pt-2">
+              <p
+                className={`${cormorant.className} text-[0.65rem] sm:text-xs tracking-[0.24em] uppercase text-white/80 text-center`}
               >
-                {/* First paragraph with drop cap */}
-                {index === 0 ? (
-                  <p className="text-sm md:text-base leading-relaxed text-white text-pretty font-sans font-light pl-3 md:pl-6">
-                    <span className="float-left text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-none mr-2 mt-1 drop-shadow-[0_4px_16px_rgba(0,0,0,0.65)]">
-                      {paragraph.charAt(0)}
-                    </span>
-                    {paragraph.slice(1)}
-                  </p>
-                ) : (
-                  <p className="text-sm md:text-base leading-relaxed text-white text-pretty font-sans font-light pl-3 md:pl-6">
+                {activeLabel}
+              </p>
+              <h3 className="style-script-regular text-2xl sm:text-3xl md:text-4xl text-white text-center">
+                {activeName}
+              </h3>
+              <div className="space-y-3">
+                {activeParagraphs.map((paragraph, index) => (
+                  <p
+                    key={`${activePerson}-${index}`}
+                    className="text-sm md:text-base leading-relaxed text-white text-pretty font-sans font-light text-justify"
+                  >
                     {paragraph}
                   </p>
-                )}
-              </motion.div>
-            ))}
-          </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Love Story */}
+          <section className="space-y-4 pt-8 md:pt-10">
+            <div className="text-center space-y-2">
+              <p
+                className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm text-white tracking-[0.16em] uppercase`}
+              >
+                Love Story
+              </p>
+              <h3 className="style-script-regular text-2xl sm:text-3xl md:text-4xl text-white">
+                From Classmates to Forever
+              </h3>
+              <p className="text-xs sm:text-sm md:text-base text-white/90 italic">
+                Where it all began…
+              </p>
+            </div>
+
+            <div className="space-y-3 md:space-y-4">
+              {sharedParagraphs.map((paragraph, index) => (
+                <p
+                  key={`shared-${index}`}
+                  className="text-sm md:text-base leading-relaxed text-white text-pretty font-sans font-light text-justify"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </section>
 
           {/* Divider and CTA */}
           <motion.div 

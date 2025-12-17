@@ -18,74 +18,79 @@ interface FAQItem {
 
 const faqItems: FAQItem[] = [
   {
-    question: "When is the wedding?",
+    question: "1. When and where will the wedding be held?",
     answer:
-      `Our wedding will be held on ${siteConfig.ceremony.date}. The wedding ceremony will start at exactly ${siteConfig.ceremony.time}. We kindly ask guests to arrive by ${siteConfig.ceremony.guestsTime} to help us begin promptly.`,
+      `Our wedding will be on Sunday, February 8, 2026, at 4:00 PM. Both the ceremony and reception will be held at Las Casas Filipinas de Acuzar – Quezon City (Casa Cilayko), located at 134 Roosevelt Avenue, San Francisco del Monte, Quezon City, Metro Manila, Philippines.`,
   },
   {
-    question: "Where will the ceremony and reception take place?",
+    question: "2. What is the guest attire?",
     answer:
-      `The ceremony will be held at ${siteConfig.ceremony.venue}, ${siteConfig.ceremony.location}. The reception will be held at ${siteConfig.reception.venue}, ${siteConfig.reception.location}. You can find directions and copy the addresses in the Details section above.`,
+      "Guest Attire:\n\nGentlemen: Barong Tagalog, slacks, or ceremonial uniform (e.g., grey duct or other formal uniform).\n\nLadies: Filipiniana gown.\n\nColors and Style: No restriction on colors except please avoid red, black, and white.\n\nFootwear: Formal shoes or heels suitable for church and reception venues.",
   },
   {
-    question: "How do I RSVP?",
+    question: "3. When should I RSVP?",
     answer:
-      `Please search for your name in the RSVP section above and follow the instructions to confirm your attendance. If you cannot find your name, you can request to join the guest list in the RSVP section.`,
+      `We kindly ask that you confirm your attendance by January 22, 2026. We have reserved seats especially for you, and it would bring us great joy to celebrate together. Your response will help us finalize our guest list and seating arrangements.`,
   },
   {
-    question: "What time should I arrive?",
+    question: "4. Is the invitation transferable or can I bring additional guests?",
     answer:
-      `Kindly arrive by ${siteConfig.ceremony.guestsTime} so we can begin the ceremony promptly at exactly ${siteConfig.ceremony.time}. Your punctuality means so much to us — and don't forget to have a light snack beforehand so you can enjoy the celebration comfortably!`,
+      "It is our joy to celebrate this occasion with our closest loved ones. In keeping with the intimacy of the gathering, we kindly ask that attendance be limited to those named on the invitation. For those accompanied by non‑RSVP guests, we have thoughtfully arranged a designated waiting area in the basement parking for the duration of the ceremony and reception.",
   },
   {
-    question: "What should I wear?",
+    question: "5. Are children welcome?",
     answer:
-      `Formal attire is lovingly encouraged. Our motif is ${siteConfig.dressCode.motif}. For guests, semi-formal or formal attire in shades of green is warmly encouraged. We kindly request no all-white dresses, jeans, or shorts.`,
+      "While we hold a special place in our hearts for your little ones, we wish to keep our celebration intimate and serene. We kindly request that the occasion be reserved for adults only. The exception, of course, will be the children within our family and those who are part of the wedding entourage, whose presence adds joy and meaning to our day.",
   },
   {
-    question: "Can I bring a plus one?",
+    question: "6. What is your gift policy?",
     answer:
-      "The seating will be formal, RSVP-style. That's why we're asking you to fill out this invitation form to secure your spot. Kindly do not bring plus ones unless explicitly stated in your invitation.",
+      "Your presence at our wedding is the most treasured gift. If you wish to honor us with a gift, we kindly request a cash gift as a gesture of support for our new life together. All bank details and the QR code can be found at the bottom of the invitation and in the Gift Guide section for your convenience.",
   },
   {
-    question: "Is there parking available?",
+    question: "7. Is parking available at the venue?",
     answer:
-      "Yes! Parking is available at the venue. Please arrive early to find a comfortable spot. Private vehicles and local transport are welcome.",
+      "Yes, parking is available at Las Casas Filipinas de Acuzar – Quezon City for our guests. The venue offers on-site parking, including basement parking areas, with staff on hand to assist and guide vehicles upon arrival. As parking spaces are limited, we kindly recommend arriving 20–30 minutes early to allow ample time to park and settle in comfortably.",
   },
   {
-    question: "How do I get directions to the venues?",
+    question: "8. How do we get to the venue?",
     answer:
-      "You can find directions in the Details section above. Simply click the 'Get Directions' button on either the ceremony or reception card, and it will open Google Maps with the location. You can also copy the address to use in your preferred navigation app.",
+      "Our celebration will take place at Casa Cilayko, Las Casas Filipinas de Acuzar – Quezon City, located at 134 Roosevelt Avenue, San Francisco del Monte, Quezon City, Metro Manila. Guests arriving via TNVS are kindly encouraged to use the official Las Casas Quezon City Google Maps pin to ensure a smooth and convenient drop-off at the venue. For those arriving by private car, directions and guest parking are readily available through Google Maps.",
   },
   {
-    question: "Can I take photos during the ceremony?",
+    question: "9. What is your photo and social media policy?",
     answer:
-      "This is an unplugged ceremony. We kindly ask guests to refrain from using phones or cameras during the ceremony so everyone can be fully present. Our professional photographers will capture every moment and we'll share the photos afterward.",
+      "We would love for everyone to be fully present as we celebrate this special day. While you are welcome to take photos, we kindly ask that you remain attentive to the ceremony and reception. Please avoid posting photos during the celebration or ahead of time—our photographers will lovingly capture the memories so you can simply enjoy the moment with us.",
   },
   {
-    question: "What if I have dietary restrictions or allergies?",
+    question: "10. What if I have dietary restrictions, allergies, or special meal requests?",
     answer:
-      "Please mention any dietary restrictions, allergies, or special meal requirements in the message field when you submit your RSVP. We want to ensure everyone can enjoy the celebration comfortably!",
+      "If you have any dietary restrictions, allergies, or special meal requests, we kindly invite you to mention them in the message field when submitting your RSVP. You may also reach out to us directly, and we will gladly coordinate with our caterer to ensure you are comfortable and well cared for.",
   },
   {
-    question: "Will there be transportation provided?",
+    question: "11. What if my plans change after I RSVP?",
     answer:
-      "Private vehicles and local transport are welcome. We recommend coordinating with friends or family and planning your route ahead of time. Please plan your route ahead to avoid unexpected delays.",
+      "If your plans change, we kindly ask that you let us know as soon as possible so we can make the necessary arrangements. You may also update your RSVP by searching for your name in the RSVP section (Guest List) and submitting a new response. Your timely update is greatly appreciated and helps us ensure a smooth and joyful celebration for everyone.",
   },
   {
-    question: "What happens after the ceremony?",
+    question: "12. Will there be medical or safety assistance at the venue?",
     answer:
-      `The reception will follow after the ceremony at ${siteConfig.reception.venue}, ${siteConfig.reception.location}. The seating will be formal, RSVP-style, so please make sure you've confirmed your attendance through the RSVP form.`,
+      "For your comfort and peace of mind, a dedicated safety officer will be on duty at Las Casas throughout the celebration. Should you require any first aid assistance, please feel free to approach any of our servers or wedding coordinators, who will be more than happy to assist you promptly and with care.",
   },
   {
-    question: "Are children welcome?",
+    question: "13. Are there nearby accommodations?",
     answer:
-      "We love children, but due to the formal nature of our celebration and limited seating, we kindly ask that only children explicitly included in your invitation attend. If you have questions about this, please reach out to us.",
+      "For guests seeking nearby accommodations, there are several hotel options conveniently located near Las Casas Filipinas de Acuzar – Quezon City, catering to a range of preferences and budgets. Budget‑friendly choices include Go Hotels Timog, Red Planet Timog Avenue, and Hop Inn Hotel Tomas Morato, all offering clean, comfortable stays within a short drive from the venue. For those looking for mid‑range comfort, B Hotel Quezon City and Luxent Hotel provide stylish rooms and added amenities in the Tomas Morato and Timog areas. Guests who prefer a more upscale experience may consider Seda Vertis North, Park Inn by Radisson North EDSA, or ibis Styles Manila Araneta City, which offer refined accommodations, excellent dining options, and convenient access to major city landmarks—all within easy reach of the venue.",
   },
   {
-    question: "What if I can't attend?",
+    question: "14. What is the schedule between the ceremony and reception?",
     answer:
-      "We completely understand if you cannot attend. Please still RSVP to let us know, and feel free to leave a message for Marzan and Nica. Your presence will be missed, but your well wishes mean the world to us!",
+      `The wedding ceremony will begin promptly at 4:00 PM, followed by a short interlude before the reception program starts at 6:00 PM. During this time, guests are welcome to relax and enjoy the beautiful surroundings of Las Casas.`,
+  },
+  {
+    question: "15. Will it be warm at the venue? Any comfort tips?",
+    answer:
+      "As the venue is an open heritage space, it may feel warm while waiting, especially in the late afternoon. For your comfort, we kindly suggest bringing handheld fans or any personal items that help you stay cool and comfortable, so you may fully enjoy the celebration with ease.",
   },
 ]
 

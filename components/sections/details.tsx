@@ -65,11 +65,6 @@ export function Details() {
   const ceremonyMapsLink = `https://maps.google.com/?q=${encodeURIComponent(siteConfig.ceremony.location)}`
   const receptionMapsLink = `https://maps.google.com/?q=${encodeURIComponent(siteConfig.reception.location)}`
 
-  // Palettes (used only for color chips in attire card) - Green motif
-  const sponsorPalette = ["#2D5016", "#4A7C59", "#6B9B7A"]
-  const guestPalette = ["#8FB99A", "#B8D5C3", "#D4E8D9", "#6B9B7A", "#4A7C59"]
-  const secondaryPalette = ["#E8F5EB", "#D4E8D9", "#B8D5C3", "#8FB99A", "#6B9B7A"]
-
   const openInMaps = (link: string) => {
     window.open(link, "_blank", "noopener,noreferrer")
   }
@@ -117,124 +112,102 @@ export function Details() {
         </div>
       </div>
 
-      {/* Ceremony & Reception Locations (separate cards) */}
+      {/* Ceremony & Reception Location (single combined card) */}
       <div className="relative z-10 mb-4 sm:mb-8 max-w-6xl mx-auto px-3 sm:px-5 space-y-3 sm:space-y-4">
-        <div className="text-center text-white/90">
-          <p className="text-[10px] sm:text-xs tracking-[0.3em] uppercase">
-            Ceremony &amp; Reception Location
-          </p>
-          <p className="text-sm sm:text-base md:text-lg font-semibold">
-            Daraga Church &amp; Hotel St. Ellis in Legazpi
-          </p>
-        </div>
+      
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
-          {[
-            {
-              key: "ceremony",
-              label: "Ceremony",
-              venue: siteConfig.ceremony.venue,
-              location: siteConfig.ceremony.location,
-              date: siteConfig.ceremony.date,
-              time: siteConfig.ceremony.time,
-              mapLink: ceremonyMapsLink,
-              gradient: "from-[#3D5033] via-[#525E2C] to-[#E0CFB5]",
-              image: "/Details/RELIGIOUS-Daraga_Church,_Albay.jpg",
-            },
-            {
-              key: "reception",
-              label: "Reception",
-              venue: siteConfig.reception.venue,
-              location: siteConfig.reception.location,
-              date: siteConfig.reception.date,
-              time: siteConfig.reception.time,
-              mapLink: receptionMapsLink,
-              gradient: "from-[#525E2C] via-[#6B9B7A] to-[#F0F0EE]",
-              image: "/Details/Hotel St. ellis.jpg",
-            },
-          ].map((info) => (
-            <div
-              key={info.key}
-              className="overflow-hidden rounded-xl sm:rounded-2xl border border-[#F0F0EE]/25 bg-gradient-to-b shadow-[0_20px_60px_rgba(0,0,0,0.45)] transition-transform duration-500 group hover:scale-[1.01]"
-              style={{ backgroundImage: undefined }}
-            >
-              {/* Top image */}
-              <div className="relative h-52 sm:h-64 md:h-72 w-full">
-                <Image
-                  src={info.image}
-                  alt={info.location}
-                  fill
-                  className="object-cover"
-                  sizes="100vw"
-                  priority
-                />
-                <div className={`absolute inset-0 bg-gradient-to-t from-[#3D5033]/95 via-[#525E2C]/65 to-transparent`} />
-                <div className="absolute inset-0 flex flex-col justify-end px-3 sm:px-6 pb-3 sm:pb-6 text-white">
-                  <p className="text-[10px] sm:text-xs tracking-[0.35em] uppercase opacity-85">
-                    {info.label}
-                  </p>
-                  <h3 className="text-xl sm:text-3xl font-serif font-semibold tracking-wide drop-shadow-lg">
-                    {info.venue}
-                  </h3>
-                </div>
-              </div>
-
-              {/* Details panel */}
-              <div className="bg-[#F0F0EE]/95 text-[#2E3A24] px-3 sm:px-6 py-4 sm:py-6 space-y-4 backdrop-blur-sm">
-                <div className="space-y-2.5">
-                  <div className="space-y-1">
-                    <p className="text-xs sm:text-sm text-[#243127]/90 leading-relaxed">{info.location}</p>
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-1.5 sm:gap-2 text-left">
-                    <div className="rounded-md border border-[#E0CFB5] bg-white/80 px-2.5 py-2 shadow-sm">
-                      <p className="text-[9px] sm:text-[10px] font-semibold tracking-[0.18em] text-[#525E2C] uppercase mb-0.5">
-                        Date
-                      </p>
-                      <p className="text-sm sm:text-base font-bold text-[#3D5033]">{info.date}</p>
-                    </div>
-                    <div className="rounded-md border border-[#E0CFB5] bg-white/80 px-2.5 py-2 shadow-sm">
-                      <p className="text-[9px] sm:text-[10px] font-semibold tracking-[0.18em] text-[#525E2C] uppercase mb-0.5">
-                        {info.label}
-                      </p>
-                      <p className="text-sm sm:text-base font-bold text-[#3D5033]">{info.time}</p>
-                    </div>
-                    <div className="rounded-md border border-[#E0CFB5] bg-white/80 px-2.5 py-2 shadow-sm">
-                      <p className="text-[9px] sm:text-[10px] font-semibold tracking-[0.18em] text-[#525E2C] uppercase mb-0.5">
-                        Venue
-                      </p>
-                      <p className="text-sm sm:text-base font-bold text-[#3D5033]">{info.venue}</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-3">
-                  <button
-                    onClick={() => openInMaps(info.mapLink)}
-                    className="flex items-center justify-center gap-1.5 rounded-lg bg-[#525E2C] text-white py-2.5 sm:py-3 shadow-lg hover:translate-y-[-2px] transition-all text-xs sm:text-sm font-semibold"
-                  >
-                    <Navigation className="w-4 h-4" />
-                    Get Directions
-                  </button>
-                  <button
-                    onClick={() => copyToClipboard(info.location, info.key)}
-                    className="flex items-center justify-center gap-1.5 rounded-lg border border-[#525E2C]/35 text-[#3D5033] py-2.5 sm:py-3 hover:bg-[#525E2C]/5 transition-all text-xs sm:text-sm font-semibold"
-                  >
-                    {copiedItems.has(info.key) ? (
-                      <>
-                        <Check className="w-4 h-4" />
-                        Copied
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-4 h-4" />
-                        Copy Address
-                      </>
-                    )}
-                  </button>
-                </div>
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-3 sm:gap-4">
+          <div
+            className="overflow-hidden rounded-xl sm:rounded-2xl border border-[#F0F0EE]/25 bg-gradient-to-b shadow-[0_20px_60px_rgba(0,0,0,0.45)] transition-transform duration-500 group hover:scale-[1.01]"
+            style={{ backgroundImage: undefined }}
+          >
+            {/* Top image */}
+            <div className="relative h-52 sm:h-64 md:h-72 w-full">
+              <Image
+                src="/Details/LasCasasQuezonCity.jpg"
+                alt={siteConfig.ceremony.location}
+                fill
+                className="object-cover"
+                sizes="100vw"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3D5033]/95 via-[#525E2C]/65 to-transparent" />
+              <div className="absolute inset-0 flex flex-col justify-end px-3 sm:px-6 pb-3 sm:pb-6 text-white">
+                <p className="text-[10px] sm:text-xs tracking-[0.35em] uppercase opacity-85">
+                  Ceremony &amp; Reception
+                </p>
+                <h3 className="text-xl sm:text-3xl font-serif font-semibold tracking-wide drop-shadow-lg">
+                  {siteConfig.ceremony.venue}
+                </h3>
               </div>
             </div>
-          ))}
+
+            {/* Details panel */}
+            <div className="bg-[#F0F0EE]/95 text-[#2E3A24] px-3 sm:px-6 py-4 sm:py-6 space-y-4 backdrop-blur-sm">
+                <div className="space-y-2.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2 text-left">
+                  <div className="rounded-md border border-[#E0CFB5] bg-white/80 px-2.5 py-2 shadow-sm">
+                    <p className="text-[9px] sm:text-[10px] font-semibold tracking-[0.18em] text-[#525E2C] uppercase mb-0.5">
+                      Date
+                    </p>
+                    <p className="text-sm sm:text-base font-bold text-[#3D5033]">
+                      {siteConfig.ceremony.date}
+                    </p>
+                  </div>
+                  <div className="rounded-md border border-[#E0CFB5] bg-white/80 px-2.5 py-2 shadow-sm">
+                    <p className="text-[9px] sm:text-[10px] font-semibold tracking-[0.18em] text-[#525E2C] uppercase mb-0.5">
+                      Ceremony
+                    </p>
+                    <p className="text-sm sm:text-base font-bold text-[#3D5033]">
+                      {siteConfig.ceremony.time}
+                    </p>
+                  </div>
+                  <div className="rounded-md border border-[#E0CFB5] bg-white/80 px-2.5 py-2 shadow-sm">
+                    <p className="text-[9px] sm:text-[10px] font-semibold tracking-[0.18em] text-[#525E2C] uppercase mb-0.5">
+                      Reception
+                    </p>
+                    <p className="text-sm sm:text-base font-bold text-[#3D5033]">
+                      {siteConfig.reception.time}
+                    </p>
+                  </div>
+                  <div className="rounded-md border border-[#E0CFB5] bg-white/80 px-2.5 py-2 shadow-sm">
+                    <p className="text-[9px] sm:text-[10px] font-semibold tracking-[0.18em] text-[#525E2C] uppercase mb-0.5">
+                      Venue
+                    </p>
+                    <p className="text-sm sm:text-base font-bold text-[#3D5033]">
+                      {siteConfig.ceremony.venue}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-3">
+                <button
+                  onClick={() => openInMaps(ceremonyMapsLink)}
+                  className="flex items-center justify-center gap-1.5 rounded-lg bg-[#525E2C] text-white py-2.5 sm:py-3 shadow-lg hover:translate-y-[-2px] transition-all text-xs sm:text-sm font-semibold"
+                >
+                  <Navigation className="w-4 h-4" />
+                  Get Directions
+                </button>
+                <button
+                  onClick={() => copyToClipboard(siteConfig.ceremony.location, "ceremony-reception")}
+                  className="flex items-center justify-center gap-1.5 rounded-lg border border-[#525E2C]/35 text-[#3D5033] py-2.5 sm:py-3 hover:bg-[#525E2C]/5 transition-all text-xs sm:text-sm font-semibold"
+                >
+                  {copiedItems.has("ceremony-reception") ? (
+                    <>
+                      <Check className="w-4 h-4" />
+                      Copied
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-4 h-4" />
+                      Copy Address
+                    </>
+                  )}
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -250,136 +223,112 @@ export function Details() {
         </div>
 
         <div className="space-y-3 sm:space-y-4">
-          {/* Attire Guidelines */}
-          <div className="relative rounded-2xl border border-white/40 bg-white/85 backdrop-blur-lg shadow-[0_18px_40px_rgba(61,80,51,0.18)] p-3.5 sm:p-5 overflow-hidden">
-            <div className="mb-2.5 sm:mb-3 relative z-10 text-center">
-              <h4 className="text-[0.75rem] sm:text-sm md:text-base font-semibold tracking-[0.3em] uppercase text-[#3D5033]">
-                Attire &amp; Motif
+          {/* Attire & Guest Guidelines */}
+          <div className="relative rounded-2xl border border-white/40 bg-white/80 backdrop-blur-xl shadow-[0_18px_40px_rgba(61,80,51,0.26)] p-4 sm:p-6 lg:p-8 overflow-hidden space-y-5 sm:space-y-6">
+            {/* Attire header */}
+            <div className="relative z-10 text-center space-y-2 sm:space-y-3">
+              <p className="text-[0.7rem] sm:text-xs md:text-sm tracking-[0.3em] uppercase text-[#3D5033]/80">
+                Attire Guidelines
+              </p>
+              <h4 className="text-lg sm:text-xl md:text-2xl font-semibold tracking-[0.18em] uppercase text-[#3D5033]">
+                Guest Attire
               </h4>
+              <p className="text-[0.7rem] sm:text-xs md:text-sm text-[#3D5033]/80">
+                Filipiniana-inspired attire for our special day
+              </p>
             </div>
 
-            <div className="relative w-full rounded-2xl overflow-hidden border border-white/60 shadow-xl bg-white p-4 sm:p-6 space-y-3 sm:space-y-4">
-              <div className="text-center space-y-2 sm:space-y-3">
-                <p className="text-xs sm:text-sm font-semibold text-[#3D5033]">
-                  Formal attire in shades of green (from light to dark) is lovingly encouraged.
+            {/* Attire inner card */}
+            <div className="relative z-10 rounded-3xl bg-white shadow-[0_18px_60px_rgba(0,0,0,0.18)] border border-[#E5D9C8] px-4 sm:px-8 py-5 sm:py-7 lg:py-8">
+              <div className="text-center space-y-3 sm:space-y-4">
+                <p className="text-xs sm:text-sm md:text-base font-semibold tracking-[0.22em] uppercase text-[#3D5033]">
+                  Filipiniana-Themed Wedding Attire Guidelines
                 </p>
-                <p className="text-xs sm:text-sm text-[#2E3A24]/90">
-                  Please dress within our wedding colors to help create a soft, elegant green celebration.
+                <p className="text-xs sm:text-sm md:text-base text-[#3D5033]/85 max-w-2xl mx-auto leading-relaxed">
+                  We warmly invite our guests to join us in celebrating Filipino heritage with Filipiniana-inspired
+                  formal attire.
                 </p>
               </div>
 
-              <div className="space-y-4">
-                <div className="border-t border-[#F5E5D9] pt-4">
-                  <h5 className="font-semibold text-xs sm:text-sm text-[#3D5033] mb-2">Principal &amp; Peer Sponsors</h5>
-                  <div className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm">
-                    <p className="text-[#2E3A24]">
-                      Ninong: classic black coat. Ninang: graceful dress in a light-green hue.
-                    </p>
-                    <div className="pt-1">
-                      <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.15em] text-[#3D5033] mb-1">
-                        Palette
-                      </p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {sponsorPalette.map((color) => (
-                          <span
-                            key={color}
-                            className="w-7 h-7 rounded-full border border-white/70 shadow-sm"
-                            style={{ backgroundColor: color }}
-                            title={color}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="mt-4 sm:mt-5 lg:mt-6 space-y-2.5 sm:space-y-3.5 text-[0.8rem] sm:text-sm md:text-base text-[#2E3A24] leading-relaxed max-w-3xl mx-auto">
+                <p className="text-center font-semibold text-[#3D5033] tracking-[0.18em] uppercase">
+                  Guest Attire
+                </p>
+                <p>
+                  <span className="font-semibold">Gentlemen:</span> Barong Tagalog, slacks, or ceremonial uniform (e.g.,
+                  grey duct or other formal uniform).
+                </p>
+                <p>
+                  <span className="font-semibold">Ladies:</span> Filipiniana gown.
+                </p>
+                <p>
+                  <span className="font-semibold">Colors and Style:</span> No restriction on colors except please avoid
+                  red, black, and white.
+                </p>
+                <p>
+                  <span className="font-semibold">Footwear:</span> Formal shoes or heels suitable for church and
+                  reception venues.
+                </p>
+              </div>
 
-                <div className="border-t border-[#F5E5D9] pt-4">
-                  <h5 className="font-semibold text-xs sm:text-sm text-[#3D5033] mb-2">Wedding Guests</h5>
-                  <div className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm">
-                    <p className="text-[#2E3A24]">
-                      Semi-formal or formal attire in shades of green (from light to dark) is warmly encouraged.
-                    </p>
-                    <div className="pt-1">
-                      <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.15em] text-[#3D5033] mb-1">
-                        Palette
-                      </p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {guestPalette.map((color) => (
-                          <span
-                            key={color}
-                            className="w-7 h-7 rounded-full border border-white/70 shadow-sm"
-                            style={{ backgroundColor: color }}
-                            title={color}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="border-t border-[#F5E5D9] pt-4">
-                  <h5 className="font-semibold text-xs sm:text-sm text-[#3D5033] mb-2">Secondary Sponsors &amp; Bridesmaids</h5>
-                  <div className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm">
-                    <p className="text-[#2E3A24]">
-                      Coordinated gowns and attire using elegant green tones from the palette below.
-                    </p>
-                    <div className="pt-1">
-                      <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.15em] text-[#3D5033] mb-1">
-                        Palette
-                      </p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {secondaryPalette.map((color) => (
-                          <span
-                            key={color}
-                            className="w-7 h-7 rounded-full border border-white/70 shadow-sm"
-                            style={{ backgroundColor: color }}
-                            title={color}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              {/* Small divider */}
+              <div className="mt-5 sm:mt-6 flex items-center justify-center gap-3">
+                <span className="h-px w-16 sm:w-20 bg-[#D6C7B4]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#D1AB6D]" />
+                <span className="h-px w-16 sm:w-20 bg-[#D6C7B4]" />
               </div>
             </div>
 
-            <p className="text-[11px] sm:text-sm text-center mt-2.5 sm:mt-3 text-[#3D5033] font-semibold">
-              Note: We kindly request no all-white dresses, jeans, or shorts.
-            </p>
-          </div>
-
-          {/* Arrival Time & Reception Guidelines */}
-          <div className="relative rounded-2xl border border-white/40 bg-white/85 backdrop-blur-lg shadow-[0_18px_40px_rgba(61,80,51,0.18)] p-3.5 sm:p-5 overflow-hidden">
-            <div className="space-y-4 sm:space-y-5">
-              {/* Arrival Time */}
-              <div className="relative w-full rounded-2xl overflow-hidden border border-white/60 shadow-xl bg-white p-4 sm:p-6">
-                <div className="mb-3 sm:mb-4">
-                  <h4 className="text-[0.75rem] sm:text-sm md:text-base font-semibold tracking-[0.3em] uppercase text-[#3D5033] mb-3">
-                    Arrival Time
-                  </h4>
-                  <div className="space-y-2 sm:space-y-2.5">
-                    <p className="text-xs sm:text-sm text-[#2E3A24] leading-relaxed">
-                      Kindly arrive by <span className="font-semibold text-[#3D5033]">10:00 A.M.</span> so we can begin the wedding ceremony promptly at exactly <span className="font-semibold text-[#3D5033]">10:30 A.M.</span>.
-                    </p>
-                    <p className="text-xs sm:text-sm text-[#2E3A24] leading-relaxed">
-                      Your punctuality means so much to us — and don&apos;t forget to have a light snack beforehand so you can enjoy the celebration comfortably!
+            {/* Important reminders styled list */}
+            <div className="relative z-10 pt-1 sm:pt-2 space-y-3 sm:space-y-4">
+              <h4 className="text-center text-sm sm:text-base md:text-lg font-semibold tracking-[0.22em] uppercase text-[#3D5033]">
+                Important Reminders
+              </h4>
+              <div className="space-y-2.5 sm:space-y-3">
+                {[
+                  {
+                    title: "Invitation Only",
+                    body:
+                      "As we celebrate this moment with you, we kindly ask that attendance be limited to those named on the invitation.",
+                  },
+                  {
+                    title: "Gift Policy",
+                    body:
+                      "Your presence at our wedding is the most treasured gift. If you wish to honor us with a gift, we kindly request a cash gift as a gesture of support for our new life together.",
+                  },
+                  {
+                    title: "Adults-Only Event",
+                    body:
+                      "We love your little ones, but to keep the celebration intimate, we kindly request an adults-only event (children in our family and the entourage are the exception).",
+                  },
+                  {
+                    title: "Photo Policy",
+                    body:
+                      "We'd love for everyone to be fully present. We ask that guests refrain from posting photos during the celebration or ahead of time—our photographers will take care of the memories.",
+                  },
+                  {
+                    title: "RSVP",
+                    body:
+                      "We would be delighted if you could confirm your attendance within five days of receiving your invitation, allowing us to plan a celebration with care and love.",
+                  },
+                  {
+                    title: "Time",
+                    body:
+                      "We warmly request that everyone be present and ready by 3:40 P.M., allowing us to start the ceremony promptly.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-2xl border border-[#E5D9C8] bg-white/95 px-4 sm:px-5 py-3 sm:py-3.5 shadow-[0_10px_26px_rgba(0,0,0,0.08)]"
+                  >
+                    <p className="text-[0.8rem] sm:text-sm md:text-base text-[#2E3A24] leading-relaxed">
+                      <span className="font-semibold">{item.title}:</span> {item.body}
                     </p>
                   </div>
-                </div>
-              </div>
-
-              {/* Reception Guidelines */}
-              <div className="relative w-full rounded-2xl overflow-hidden border border-white/60 shadow-xl bg-white p-4 sm:p-6">
-                <div className="mb-3 sm:mb-4">
-                  <h4 className="text-[0.75rem] sm:text-sm md:text-base font-semibold tracking-[0.3em] uppercase text-[#660033] mb-3">
-                    Reception Guidelines
-                  </h4>
-                  <div className="space-y-2 sm:space-y-2.5">
-                    <p className="text-xs sm:text-sm text-[#4A2B2B] leading-relaxed">
-                      The seating will be formal, RSVP-style. That's why we're asking you to fill out this invitation form to secure your spot. Kindly do not bring plus ones unless explicitly stated in your invitation.
-                    </p>
-                  </div>
-                </div>
+                ))}
+                <p className="text-[0.8rem] sm:text-sm md:text-base text-[#2E3A24] leading-relaxed text-center pt-1">
+                  Thank you for your understanding and cooperation. We look forward to celebrating with you!
+                </p>
               </div>
             </div>
           </div>
@@ -404,7 +353,8 @@ export function Details() {
                   <div className="flex-1">
                     <p className="text-[11px] sm:text-sm font-semibold text-[#243127]">Parking Available</p>
                     <p className="text-[10px] sm:text-xs text-[#37413A]/85">
-                      Parking is available at the venue. Please arrive early to find a comfortable spot.
+                      Parking is available on-site at Las Casas Quezon City, including basement parking. As spaces are
+                      limited, we kindly recommend arriving 20–30 minutes early to park comfortably and settle in.
                     </p>
                   </div>
                 </div>
@@ -419,8 +369,9 @@ export function Details() {
                   <div className="flex-1">
                     <p className="text-[11px] sm:text-sm font-semibold text-[#243127]">Transportation</p>
                     <p className="text-[10px] sm:text-xs text-[#37413A]/85">
-                      Private vehicles and local transport are welcome. Coordinate with friends or family and plan your
-                      route ahead of time.
+                      For guests using TNVS, please use the official Las Casas Filipinas de Acuzar – Quezon City Google
+                      Maps pin to ensure a smooth drop-off. Private vehicles and local transport are welcome; kindly
+                      plan your route ahead of time.
                     </p>
                   </div>
                 </div>
@@ -437,15 +388,15 @@ export function Details() {
                 <ul className="text-[10px] sm:text-xs space-y-1 text-[#37413A]/90">
                   <li className="flex items-start gap-2">
                     <span className="text-[#525E2C] mt-0.5">•</span>
-                    <span>Plan your route ahead to avoid unexpected delays.</span>
+                    <span>Plan your route and travel time in advance to avoid unexpected delays.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[#525E2C] mt-0.5">•</span>
-                    <span>Please avoid walking during the ceremony. Approach the coordinator or wait to be guided.</span>
+                    <span>Please avoid moving around during the ceremony and program. Our coordinators will gladly guide you when needed.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[#525E2C] mt-0.5">•</span>
-                    <span>Coordinate carpooling with friends or family when possible.</span>
+                    <span>Coordinate carpooling with friends or family when possible, especially if you expect to arrive close to the ceremony time.</span>
                   </li>
                 </ul>
               </div>
@@ -527,7 +478,7 @@ export function Details() {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 animate-shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-0" />
 
               <Image
-                src={showImageModal === "ceremony" ? "/Details/RELIGIOUS-Daraga_Church,_Albay.jpg" : "/Details/Hotel St. ellis.jpg"}
+                src="/Details/LasCasasQuezonCity.jpg"
                 alt={showImageModal === "ceremony" ? siteConfig.ceremony.location : siteConfig.reception.location}
                 fill
                 className="object-contain p-6 sm:p-8 md:p-10 transition-transform duration-700 group-hover:scale-105 z-10"

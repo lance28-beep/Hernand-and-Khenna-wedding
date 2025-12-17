@@ -1,27 +1,9 @@
 "use client"
 
-import { useEffect, useState, useMemo } from "react"
+import { useEffect, useState } from "react"
 import { motion } from "motion/react"
 import { Cormorant_Garamond, WindSong } from "next/font/google"
 import { siteConfig } from "@/content/site"
-
-const desktopImages = [
-  "/desktop-background/couple (1).jpg",
-  "/desktop-background/couple (2).jpg",
-  "/desktop-background/couple (3).jpg",
-  "/desktop-background/couple (4).jpg",
-  "/desktop-background/couple (5).jpg",
-
-]
-
-const mobileImages = [
-  "/mobile-background/couple (4).jpg",
-  "/mobile-background/couple (7).jpg",
-  "/mobile-background/couple (11).jpg",
-  "/mobile-background/couple (5).jpg",
-  "/mobile-background/couple (1).jpg",
-  "/mobile-background/couple (13).jpg",
-]
 
 const SHOW_BUTTERFLIES = false
 
@@ -36,95 +18,24 @@ const windSong = WindSong({
 })
 
 export function Hero() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [imagesLoaded, setImagesLoaded] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
 
-  // Detect screen size and update isMobile state
+  // Fade in the hero content once the component mounts
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768) // md breakpoint
-    }
-    
-    // Check on mount
-    checkScreenSize()
-    
-    // Listen for resize events
-    window.addEventListener('resize', checkScreenSize)
-    
-    return () => window.removeEventListener('resize', checkScreenSize)
+    setIsVisible(true)
   }, [])
-
-  // Get the appropriate image array based on screen size
-  const backgroundImages = useMemo(() => {
-    return isMobile ? mobileImages : desktopImages
-  }, [isMobile])
-
-  // Preload images progressively - show first image immediately
-  useEffect(() => {
-    setImagesLoaded(false)
-    setCurrentImageIndex(0)
-    
-    // Load first image with priority to show it immediately
-    const firstImg = new Image()
-    firstImg.src = backgroundImages[0]
-    firstImg.onload = () => {
-      setImagesLoaded(true) // Show first image immediately
-    }
-    
-    // Then preload a small lookahead set in background (avoid preloading all)
-    setTimeout(() => {
-      if (typeof navigator !== 'undefined' && (navigator as any).connection?.saveData) return
-      backgroundImages.slice(1, 3).forEach((src) => {
-        const img = new Image()
-        img.decoding = 'async'
-        img.loading = 'lazy' as any
-        img.src = src
-      })
-    }, 200)
-  }, [backgroundImages])
-
-  useEffect(() => {
-    if (!imagesLoaded) return
-    
-    const imageTimer = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length)
-    }, 5000)
-    return () => clearInterval(imageTimer)
-  }, [imagesLoaded, backgroundImages])
-
-  useEffect(() => {
-    if (imagesLoaded) {
-      setIsVisible(true)
-    }
-  }, [imagesLoaded])
 
   const [weddingMonth = "June", weddingDayRaw = "7", weddingYear = "2026"] =
     siteConfig.wedding.date.split(" ")
   const weddingDayNumber = weddingDayRaw.replace(/[^0-9]/g, "") || "7"
   const ceremonyTime = siteConfig.wedding.time
+  const ceremonyDayAbbrev = siteConfig.ceremony.day?.slice(0, 3).toUpperCase() || "SUN"
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#525E2C]">
       <div className="absolute inset-0 w-full h-full">
-        {imagesLoaded && backgroundImages.map((image, index) => (
-          <div
-            key={image}
-            className={`absolute inset-0 transition-opacity duration-[1500ms] ease-in-out ${
-              index === currentImageIndex ? "opacity-100" : "opacity-0"
-            }`}
-            style={{
-              backgroundImage: `url('${image}')`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              willChange: "opacity",
-            }}
-          />
-        ))}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#3D4636]/95 via-[#525E2C]/80 to-transparent z-0" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#3D4636]/85 z-0" />
+        {/* Image-free hero background using layered gradients */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#3D4636] via-[#525E2C] to-[#3D4636] z-0" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(224,207,181,0.3),transparent_55%)] mix-blend-screen" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(240,240,238,0.28),transparent_35%)] opacity-70 animate-[pulse_9s_ease-in-out_infinite]" />
       </div>
@@ -461,9 +372,9 @@ export function Hero() {
                 textShadow: "0 2px 10px rgba(0,0,0,0.75)",
               }}
             >
-              Together with our families,
+              A Celebration of Love, Life, and Forever
               <br />
-              we joyfully invite you to witness our union.
+              
             </h1>
             <h1
               className="style-script-regular text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl drop-shadow-2xl"
@@ -472,7 +383,7 @@ export function Hero() {
                 textShadow: "0 0 24px rgba(0,0,0,0.9)",
               }}
             >
-              Marzan and Nica
+              Hernand &amp; Khenna
             </h1>
           </div>
 
@@ -491,7 +402,7 @@ export function Hero() {
               <div className="flex flex-1 items-center justify-end gap-1.5 sm:gap-2.5">
                   <span className="h-[0.5px] flex-1 bg-[#F0F0EE]/45" />
                   <span className="text-[0.6rem] sm:text-[0.7rem] md:text-xs uppercase tracking-[0.3em] sm:tracking-[0.4em] font-light">
-                    Sat
+                    {ceremonyDayAbbrev}
                   </span>
                   <span className="h-[0.5px] w-6 sm:w-8 md:w-10 bg-[#F0F0EE]/45" />
                 </div>
@@ -505,14 +416,11 @@ export function Hero() {
                   <span
                     className={`${cormorant.className} relative text-[4rem] sm:text-[5.5rem] md:text-[6.5rem] lg:text-[7rem] font-light leading-none tracking-wider`}
                     style={{
-                      background: "linear-gradient(180deg, #F7DC63 0%, #DEB73E 100%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
+                      color: "#FFE4E4",
                       textShadow:
-                        "0 0 20px rgba(247,220,99,0.5), 0 0 40px rgba(222,183,62,0.4), 0 4px 22px rgba(0,0,0,0.6)",
+                        "0 0 20px rgba(255,228,228,0.6), 0 0 40px rgba(255,228,228,0.45), 0 4px 22px rgba(0,0,0,0.7)",
                       filter:
-                        "drop-shadow(0 0 30px rgba(247,220,99,0.6)) drop-shadow(0 0 50px rgba(222,183,62,0.5))",
+                        "drop-shadow(0 0 30px rgba(255,228,228,0.65)) drop-shadow(0 0 50px rgba(255,228,228,0.5))",
                     }}
                   >
                     {weddingDayNumber}
@@ -551,7 +459,7 @@ export function Hero() {
                 textShadow: "0 2px 12px rgba(0,0,0,0.7)",
               }}
             >
-              Reception to follow at {siteConfig.reception.venue}
+              Reception to follow
             </p>
           </div>
 
@@ -603,13 +511,19 @@ export function Hero() {
             >
               <span
                 aria-hidden
-                className="absolute inset-0 rounded-lg bg-transparent border-2 border-[#E0CFB5] transition-all duration-500 group-hover:bg-[#E0CFB5]/10"
+                className="absolute inset-0 rounded-lg transition-all duration-500"
+                style={{
+                  backgroundColor: "#FFE4E4",
+                  border: "2px solid #E0CFB5",
+                }}
               />
-              <span className="relative z-10 inline-flex h-full min-h-[3rem] sm:min-h-[3.25rem] w-full items-center justify-center px-6 sm:px-8 text-[0.65rem] sm:text-[0.7rem] md:text-xs uppercase tracking-[0.32em] sm:tracking-[0.36em] text-[#F0F0EE] font-semibold transition-all duration-300">
+              <span className="relative z-10 inline-flex h-full min-h-[3rem] sm:min-h-[3.25rem] w-full items-center justify-center px-6 sm:px-8 text-[0.65rem] sm:text-[0.7rem] md:text-xs uppercase tracking-[0.32em] sm:tracking-[0.36em] font-semibold transition-all duration-300"
+                style={{ color: "#676B57" }}
+              >
                 Read Our Story
               </span>
               <div 
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -skew-x-12 group-hover:translate-x-full"
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -skew-x-12 group-hover:translate-x-full"
                 style={{ width: "50%", left: "-100%" }}
               />
             </a>

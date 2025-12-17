@@ -7,7 +7,7 @@ import { Navbar } from "@/components/navbar"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://marzan-and-nica-wedding.vercel.app/"
 const canonicalUrl = siteUrl.replace(/\/$/, "")
-const eventImagePath = "/desktop-background/couple (13).jpg"
+const eventImagePath = "/Details/LinkPreview.jpg"
 const eventImageUrl = `${canonicalUrl}${eventImagePath}`
 const eventTitle = "Marzan & Nica - Wedding Invitation"
 const eventDescription =

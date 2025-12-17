@@ -7,38 +7,38 @@ import { Smartphone, Banknote } from "lucide-react"
 
 const paymentMethods = [
   {
-    id: "landbank",
-    label: "LandBank",
-    description: "Direct bank transfer",
+    id: "bdo",
+    label: "BDO",
+    description: "Direct bank transfer via BDO",
     accent: "from-[#E6CFC9] to-[#BCCFC0]",
+    Icon: Banknote,
+  },
+  {
+    id: "bpi",
+    label: "BPI",
+    description: "Bank transfer via BPI",
+    accent: "from-[#BCCFC0] to-[#8EA58B]",
     Icon: Banknote,
   },
   {
     id: "gcash",
     label: "GCash",
     description: "Instant transfer via GCash",
-    accent: "from-[#BCCFC0] to-[#8EA58B]",
-    Icon: Smartphone,
-  },
-  {
-    id: "maribank",
-    label: "MariBank",
-    description: "Digital banking transfer",
     accent: "from-[#8EA58B] to-[#6B9B7A]",
-    Icon: Banknote,
+    Icon: Smartphone,
   },
 ] as const
 
 type PaymentId = typeof paymentMethods[number]["id"]
 
 const qrImageByMethod: Record<PaymentId, string> = {
-  landbank: "/QR/LandBank.png",
+  bdo: "/QR/BDO.png",
+  bpi: "/QR/BPI.png",
   gcash: "/QR/Gcash.png",
-  maribank: "/QR/MariBank.png",
 }
 
 export function Registry() {
-  const [activeMethod, setActiveMethod] = useState<PaymentId>("landbank")
+  const [activeMethod, setActiveMethod] = useState<PaymentId>("bdo")
 
   const activeDetails = paymentMethods.find((method) => method.id === activeMethod)
 
@@ -61,7 +61,9 @@ export function Registry() {
         </h2>
         
         <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/90 font-light max-w-2xl mx-auto leading-relaxed px-2">
-          Your presence is the greatest gift. Should you wish to give, a monetary gift to help us begin our new life together would mean so much to us.
+          Your presence at our wedding is the most treasured gift. If you wish to honor us with a gift, we kindly
+          request a cash gift as a gesture of support for our new life together. All bank details and QR codes can be
+          found below for your convenience.
         </p>
         
         <div className="flex items-center justify-center gap-2 mt-3 sm:mt-4">

@@ -26,11 +26,8 @@ export function SnapShare() {
   const sanitizedBrideName = brideNickname.replace(/\s+/g, "")
 
   const hashtags = [
-    "#MarzanAndNicaSayIDo",
-    `#${sanitizedGroomName}And${sanitizedBrideName}Wedding`,
-    `#${sanitizedGroomName}${sanitizedBrideName}2026`,
-    "#ForeverAndAlways",
-    `#${sanitizedGroomName}${sanitizedBrideName}Forever`,
+    "#OfficiallyTaKHENbyHERNAND",
+    "#HERNANDfoundHerMagpaKHENlanaman",
   ]
 
   const shareText = `Celebrate ${groomNickname} & ${brideNickname}'s wedding! Explore the details and share your special memories: ${websiteUrl} ${hashtags.join(" ")} ✨`
@@ -182,37 +179,7 @@ export function SnapShare() {
                 </p>
               </div>
 
-              <div className="mt-auto">
-                <h4 className={`${cormorant.className} text-[13px] sm:text-lg md:text-xl font-semibold text-white mb-3 text-center`}>
-                  Our Favorite Moments
-                </h4>
-                <div className="grid grid-cols-2 gap-1.5 sm:gap-3 md:gap-4">
-                  <motion.div
-                    className="relative aspect-square rounded-xl overflow-hidden shadow-md border-2 border-[#5C6843]/30 hover:border-[#5C6843]/50 transition-all"
-                    whileHover={{ scale: 1.03 }}
-                    transition={{ duration: 0.25 }}
-                  >
-                    <Image src="/desktop-background/couple (35).jpg" alt="Wedding moment 1" fill className="object-cover" />
-                  </motion.div>
-                  <motion.div
-                    className="relative aspect-square rounded-xl overflow-hidden shadow-md border-2 border-[#5C6843]/30 hover:border-[#5C6843]/50 transition-all"
-                    whileHover={{ scale: 1.03 }}
-                    transition={{ duration: 0.25 }}
-                  >
-                    <Image src="/desktop-background/couple (11).jpg" alt="Wedding moment 2" fill className="object-cover" />
-                  </motion.div>
-                  <motion.div
-                    className="relative col-span-2 aspect-[3/2] rounded-xl overflow-hidden shadow-md border-2 border-[#5C6843]/30 hover:border-[#5C6843]/50 transition-all"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.25 }}
-                  >
-                    <Image src="/desktop-background/couple (10).jpg" alt="Wedding moment 3" fill className="object-cover" />
-                  </motion.div>
-                </div>
-                <p className={`${cormorant.className} text-white text-[10px] sm:text-xs text-center mt-4 px-1.5`}>
-                  Tag your snapshots with our hashtags to be featured in our keepsake gallery.
-                </p>
-              </div>
+              {/* Removed sample image grid to focus on hashtags only */}
             </div>
           </motion.div>
 

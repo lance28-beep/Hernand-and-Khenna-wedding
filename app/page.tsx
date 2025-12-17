@@ -47,10 +47,10 @@ export default function Home() {
           {/* <CoupleVideo /> */}
           <Countdown />
           <Narrative />
-          <Gallery />
+          {/* <Gallery /> */}
           <Messages />
           <Details />
-          <WeddingTimeline />
+          {/* <WeddingTimeline /> */}
           <Entourage />
           <PrincipalSponsors />
           <GuestList />

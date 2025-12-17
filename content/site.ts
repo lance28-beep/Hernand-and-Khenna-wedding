@@ -1,74 +1,74 @@
 export const siteConfig = {
   couple: {
-    bride: "Nica",
-    brideNickname: "Nica",
-    groom: "Marzan",
-    groomNickname: "Marzan",
+    bride: "Ma. Khenna Mae G. Dela Cruz",
+    brideNickname: "Khenna",
+    groom: "Hernand Amor Macoy",
+    groomNickname: "Hernand",
   },
   wedding: {
-    date: "December 20, 2025",
-    time: "10:30 A.M., PH Time",
-    venue: "Daraga Church",
-    tagline: "are getting married!",
-    theme: "Elegant Green Motif",
-    motif: "Any shade of green (from light to dark)",
+    date: "February 8, 2026",
+    time: "4:00 P.M., PH Time",
+    venue: "Las Casas Filipinas de Acuzar – Quezon City (Casa Cilayko)",
+    tagline: "A Celebration of Love, Life, and Forever",
+    theme: "Filipiniana-Inspired Celebration",
+    motif: "Filipiniana-inspired attire (please avoid red, black, and white)",
   },
   details: {
     rsvp: {
-      deadline: "December 20, 2025",
+      // RSVP deadline explicitly requested in the FAQ copy
+      deadline: "January 22, 2026",
     },
   },
   ceremony: {
-    location: "Daraga Church, Legazpi, Albay, Philippines",
-    venue: "Daraga Church",
-    date: "December 20, 2025",
-    day: "Saturday",
-    time: "10:30 A.M.",
-    entourageTime: "10:00 A.M.",
-    guestsTime: "10:00 A.M.",
+    location:
+      "Las Casas Filipinas de Acuzar – Quezon City (Casa Cilayko), 134 Roosevelt Avenue, San Francisco del Monte, Quezon City, Metro Manila, Philippines",
+    venue: "Las Casas Quezon City – Casa Cilayko",
+    date: "February 8, 2026",
+    day: "Sunday",
+    time: "4:00 P.M.",
+    // Entourage call time can be refined later if needed; align guests with requested 3:40 PM
+    entourageTime: "3:40 P.M.",
+    guestsTime: "3:40 P.M.",
   },
   reception: {
-    location: "Hotel St. Ellis, Legazpi, Albay, Philippines",
-    venue: "Hotel St. Ellis",
-    date: "December 20, 2025",
-    time: "Reception to follow",
+    location:
+      "Las Casas Filipinas de Acuzar – Quezon City (Casa Cilayko), 134 Roosevelt Avenue, San Francisco del Monte, Quezon City, Metro Manila, Philippines",
+    venue: "Las Casas Quezon City – Casa Cilayko",
+    date: "February 8, 2026",
+    // Reception program starts at 6:00 PM following the ceremony
+    time: "6:00 P.M.",
   },
   dressCode: {
-    theme: "Elegant Green Motif",
-    colors: ["#2D5016", "#4A7C59", "#6B9B7A", "#8FB99A", "#B8D5C3", "#D4E8D9", "#E8F5EB"],
+    theme: "Filipiniana-Inspired Attire",
+    // Palette can be adjusted later; keep soft neutrals that work with Filipiniana styles
+    colors: ["#F3E5CF", "#D8C0A8", "#BFA27C", "#8C6B4F", "#6E4C3A"],
     sponsors: {
-      ladies: "Modern Filipiniana",
-      gentlemen: "Barong"
+      ladies: "Filipiniana gown",
+      gentlemen:
+        "Barong Tagalog, slacks, or ceremonial uniform (e.g., grey duct or other formal uniform).",
     },
     guests: {
-      ladies: "Long Gown/ cocktail dresses",
-      gentlemen: "Long Sleeves /Polo and Black slacks."
+      ladies: "Filipiniana gown.",
+      gentlemen:
+        "Barong Tagalog, slacks, or ceremonial uniform (e.g., grey duct or other formal uniform).",
     },
-    note: "Please come in your best formal/semi-formal ensemble in shades of green"
+    note: "We warmly invite you to wear Filipiniana-inspired attire and kindly avoid red, black, and white.",
   },
   narratives: {
-    groom: `In a quiet corner of the world, September 2015 became the beginning of a beautiful love story. Inside a small eatery near the railway, their eyes met for the first time. In that single moment, Marzan’s heart knew what words could not explain — he had found someone special. He gently looked at her ID and whispered her name, carrying it with him like a secret he never wanted to forget.
+    // Groom – personal portrait
+    groom: `Hernand is a man with a sharp, analytical mind and an insatiable love for learning. Calm and composed, he carries a firm sense of responsibility and an extraordinary patience that makes him a true pillar of strength. He is the protector of her peace, the believer in her wildest dreams, and a soul whose spirit balances strength with gentleness. To her, he is both a partner and an anchor — someone who steadies her in life’s storms while inspiring her to soar.`,
 
-That night, in his apartment, he searched for her name on social media: Danica De Los Angeles. He sent her message after message, not caring if there was no reply, because hope was already growing quietly in his heart.
+    // Bride – personal portrait
+    bride: `Khenna is loving and selfless, the calm in the midst of chaos. She is the light that softens him — a dreamer who inspires Hernand to reach even greater heights. Her presence adds color and flavor to his life, turning ordinary moments into something extraordinary. To him, she is not just a partner, but the heart that makes life beautiful.`,
 
-Simple messages turned into long talks, and long talks turned into love. By January 29, 2016, their hearts chose each other, and they began their journey hand in hand.
+    // Shared love story – combined narrative
+    shared: `Hernand and Khenna first crossed paths as classmates in college, sharing classrooms, stories, and small moments that would linger quietly in their memories long after life led them on separate journeys. In those early days, they were two dreamers walking parallel roads — learning, growing, and discovering who they were meant to become. Hernand pursued his calling in the academy, while Khenna continued to chase her own aspirations, each carrying an unspoken tenderness for a chapter that seemed to have closed too soon.
 
-From that day forward, Marzan wanted only one thing — to be near her always. Whenever the world felt heavy and school became difficult, Nica became his light. She stood beside him, guided him, and helped him believe in himself, until they both became civil engineers, chasing dreams together.
+Years later, as if the universe had patiently waited for the right time, their paths crossed once more. What began as a simple reconnection — a message, a conversation, a familiar presence — gently unfolded into something deeper. There was no rush, no force, no pretense; their bond was effortless, their connection organic. Laughter felt lighter, conversations flowed more freely, and every shared moment carried the warmth of coming home.
 
-Life tested them when Marzan couldn’t find work in Legazpi. With a heavy heart but a strong promise, he went to work in Masbate, promising Nica that distance would never change his love. And he proved it — every month, he came back to her, carrying pasalubong and a heart full of longing, just to see her smile.
+Slowly, the friendship they once knew blossomed into an unexpected love story. What they had in college was no longer just a sweet memory; it became the foundation of a love built on understanding, shared values, and quiet support. Everything fell heavenly into place, as though the years in between had only been preparation for the forever they were meant to find in each other.
 
-In December 2023, under a sky full of dreams, Marzan went down on one knee and asked Nica to be his forever. Because in his heart, there was no doubt — she was, and always would be, “the one.”
-
-By September 2024, Marzan was finally working in Legazpi again, and together, they began planning not just dreams, but a lifetime.
-
-Their love was never perfect, but it was real — built on patience, distance, promises, and a love that never let go.`,
-    bride: `It's a moment Nica will forever return to: the sound of Marzan's voice calling her name.
-
-She didn't know him then. They were strangers sharing space. But in that singular instant, Nica realized Marzan didn't just see her; he saw the truest, most unguarded version of her soul. In that recognition, their story began.
-
-That instant blossomed into nearly ten incredible years. Ten years of unwavering love, genuine care, and shared history. Every season they have navigated together has proven one enduring truth: Marzan is Nica's calm in every storm.
-
-His patience is not just a comfort Nica relies on; it is his quiet, powerful promise. A promise that he is staying, waiting, and never giving up. Marzan is, and always will be, her safe harbor.`,
+Today, as they stand on the threshold of marriage, Hernand and Khenna look back with grateful hearts — for the first hello in a college classroom, for the seasons spent apart, and for the gentle, faithful way their story found its way back to love, in God’s perfect time.`,
   },
   colors: {
     primary: "#4A7C59",

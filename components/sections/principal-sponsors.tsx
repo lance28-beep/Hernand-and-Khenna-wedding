@@ -34,7 +34,7 @@ export function PrincipalSponsors() {
       align === "right" ? "text-right" : align === "left" ? "text-left" : "text-center"
     return (
       <h3
-        className={`relative ${cormorant.className} text-xs sm:text-sm md:text-base lg:text-lg font-semibold uppercase text-[#F0F0EE] mb-1.5 sm:mb-2 md:mb-3 tracking-[0.1em] sm:tracking-[0.15em] ${textAlign} ${className} transition-all duration-300`}
+        className={`relative ${cormorant.className} text-xs sm:text-sm md:text-base lg:text-lg font-semibold uppercase text-[#243127] mb-1.5 sm:mb-2 md:mb-3 tracking-[0.1em] sm:tracking-[0.15em] ${textAlign} ${className} transition-all duration-300`}
       >
         {children}
       </h3>
@@ -55,7 +55,7 @@ export function PrincipalSponsors() {
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#E0CFB5]/18 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 rounded-md" />
 
         <p
-          className={`relative text-[#F0F0EE] text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold leading-snug break-words ${textAlign} group-hover/item:text-white transition-all duration-300`}
+          className={`relative text-[#243127] text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold leading-snug break-words ${textAlign} group-hover/item:text-[#1A231C] transition-all duration-300`}
         >
           {name}
         </p>
@@ -119,15 +119,8 @@ export function PrincipalSponsors() {
     <div ref={sectionRef}>
       <Section
         id="sponsors"
-        className="relative py-12 md:py-16 lg:py-20 overflow-hidden bg-[#525E2C]"
+        className="relative py-12 md:py-16 lg:py-20 overflow-hidden bg-transparent"
       >
-        {/* Background elements with sage motif */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {/* Subtle gradient overlays */}
-          <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-[#3D4636]/90 via-[#525E2C]/70 to-transparent" />
-          <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#3D4636]/95 via-[#525E2C]/70 to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(224,207,181,0.28),transparent_55%)] opacity-90" />
-        </div>
 
         {/* Section Header */}
         <div
@@ -147,7 +140,7 @@ export function PrincipalSponsors() {
             className="style-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-1.5 sm:mb-3 md:mb-4"
             style={{ textShadow: "0 4px 18px rgba(0,0,0,0.9)" }}
           >
-            Standing with Marzan &amp; Nica
+            Standing with Hernand &amp; Khenna
           </h2>
 
           {/* Simple divider */}
@@ -160,12 +153,12 @@ export function PrincipalSponsors() {
 
         {/* Sponsors content */}
         <div
-          className={`relative z-30 max-w-4xl mx-auto transition-all duration-1000 delay-300 ${
+          className={`relative z-30 max-w-4xl mx-auto px-3 sm:px-5 transition-all duration-1000 delay-300 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          {/* Card with sage & champagne theme */}
-          <div className="relative bg-white/10 backdrop-blur-md rounded-xl sm:rounded-2xl overflow-hidden border border-[#E0CFB5]/60 shadow-[0_20px_60px_rgba(0,0,0,0.45)] transition-all duration-500 group">
+          {/* Card with sage & champagne theme, matching entourage/messages */}
+          <div className="relative bg-[#F7F5F1]/95 backdrop-blur-md rounded-xl sm:rounded-2xl overflow-hidden border border-[#E0CFB5]/80 shadow-[0_20px_60px_rgba(0,0,0,0.45)] transition-all duration-500 group">
             {/* Card content */}
             <div className="relative py-3 sm:py-6 md:py-8 z-10">
               <div className="relative z-10 w-full">
