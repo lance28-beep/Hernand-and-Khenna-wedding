@@ -9,14 +9,14 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://hernand-and-khenna-
 const canonicalUrl = siteUrl.replace(/\/$/, "")
 const eventImagePath = "/Details/LinkPreview.jpg"
 const eventImageUrl = `${canonicalUrl}${eventImagePath}`
-const eventTitle = "Marzan & Nica - Wedding Invitation"
+const eventTitle = "Hernand & Khenna - Wedding Invitation"
 const eventDescription =
-  "Celebrate the wedding of Marzan and Nica on December 20, 2025 at Daraga Church, Legazpi. RSVP, explore their story, and find everything you need to join the celebration."
+  "Celebrate the wedding of Hernand and Khenna on February 8, 2026 at Las Casas Filipinas de Acuzar, Quezon City. RSVP, explore their story, and find everything you need to join the celebration."
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Event",
-  name: "Marzan & Nica Wedding",
+  name: "Hernand & Khenna Wedding",
   startDate: "2025-12-20T10:30:00+08:00",
   endDate: "2025-12-20T18:00:00+08:00",
   eventStatus: "https://schema.org/EventScheduled",
@@ -24,24 +24,24 @@ const jsonLd = {
   location: [
     {
       "@type": "Place",
-      name: "Daraga Church",
+      name: "Las Casas Filipinas de Acuzar",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Daraga Church",
-        addressLocality: "Legazpi",
-        addressRegion: "Albay",
+        streetAddress: "Las Casas Filipinas de Acuzar",
+        addressLocality: "Quezon City",
+        addressRegion: "Metro Manila",
         addressCountry: "PH",
       },
     },
   ],
   image: [eventImageUrl],
   description:
-    "You're invited to the wedding of Marzan & Nica on December 20, 2025 at Daraga Church, Legazpi. Find ceremony and reception details, RSVP information, and their full love story.",
+    "You're invited to the wedding of Hernand & Khenna on February 8, 2026 at Las Casas Filipinas de Acuzar, Quezon City. Find ceremony and reception details, RSVP information, and their full love story.",
   organizer: {
     "@type": "Person",
-    name: "Marzan & Nica",
+    name: "Hernand & Khenna",
   },
-  eventHashtag: "#MarzanAndNicaSayIDo",
+  eventHashtag: "#HernandAndKhennaSayIDo",
 }
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
@@ -52,13 +52,13 @@ export const metadata: Metadata = {
   title: eventTitle,
   description: eventDescription,
   keywords:
-    "Marzan Nica wedding, Daraga Church wedding, Hotel St. Ellis wedding, Legazpi wedding, wedding invitation, RSVP, wedding gallery, message wall, love story, #MarzanAndNicaSayIDo",
+    "Hernand Khenna wedding, Las Casas Filipinas de Acuzar wedding, Quezon City wedding, wedding invitation, RSVP, wedding gallery, message wall, love story, #HernandAndKhennaSayIDo",
   authors: [
-    { name: "Marzan" },
-    { name: "Nica" },
+    { name: "Hernand" },
+    { name: "Khenna" },
   ],
-  creator: "Marzan & Nica",
-  publisher: "Marzan & Nica",
+  creator: "Hernand & Khenna",
+  publisher: "Hernand & Khenna",
   formatDetection: {
     email: false,
     address: false,
@@ -88,11 +88,11 @@ export const metadata: Metadata = {
   },
   manifest: "/favicon_io/site.webmanifest",
   openGraph: {
-    title: "Marzan & Nica Wedding | December 20, 2025",
+    title: "Hernand & Khenna Wedding | February 8, 2026",
     description:
-      "Celebrate the union of Marzan & Nica on December 20, 2025 at Daraga Church, Legazpi. Discover their story, RSVP, and find important details for the ceremony and reception.",
+      "Celebrate the union of Hernand & Khenna on February 8, 2026 at Las Casas Filipinas de Acuzar, Quezon City. Discover their story, RSVP, and find important details for the ceremony and reception.",
     url: canonicalUrl,
-    siteName: "Marzan and Nica Wedding",
+    siteName: "Hernand and Khenna Wedding",
     locale: "en_PH",
     type: "website",
     images: [
@@ -101,17 +101,17 @@ export const metadata: Metadata = {
         url: eventImageUrl,
         width: 1200,
         height: 630,
-        alt: "Marzan & Nica Wedding Invitation - December 20, 2025",
+        alt: "Hernand & Khenna Wedding Invitation - February 8, 2026",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Marzan & Nica Wedding Invitation",
+    title: "Hernand & Khenna Wedding Invitation",
     description:
-      "You're invited to the wedding of Marzan & Nica on December 20, 2025. RSVP, explore their story, and get all the details for the big day! #MarzanAndNicaSayIDo",
+      "You're invited to the wedding of Hernand & Khenna on February 8, 2026 at Las Casas Filipinas de Acuzar, Quezon City. RSVP, explore their story, and get all the details for the big day! #HernandAndKhennaSayIDo",
     images: [eventImageUrl],
-    creator: "@marzanandnica",
+    creator: "@hernandandkhenna",
   },
   robots: {
     index: true,
