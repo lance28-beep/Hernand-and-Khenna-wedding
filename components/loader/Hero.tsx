@@ -11,11 +11,11 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
   const mobileImages = [
-    '/mobile-background/couple (1).jpg',
-    '/mobile-background/couple (2).jpg',
-    '/mobile-background/couple (3).jpg',
     '/mobile-background/couple (4).jpg',
-    '/mobile-background/couple (5).jpg',
+    '/mobile-background/couple (1).jpg',
+    '/mobile-background/couple (6).jpg',
+    '/mobile-background/couple (9).jpg',
+    '/mobile-background/couple (10).jpg',
   ];
 
   const desktopImages = [
