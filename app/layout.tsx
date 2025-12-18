@@ -7,7 +7,7 @@ import { Navbar } from "@/components/navbar"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://hernand-and-khenna-wedding.netlify.app/"
 const canonicalUrl = siteUrl.replace(/\/$/, "")
-const eventImagePath = "/Details/LinkPreview.jpg"
+const eventImagePath = "/Details/LinkPreview2.jpg"
 const eventImageUrl = `${canonicalUrl}${eventImagePath}`
 const eventTitle = "Hernand & Khenna - Wedding Invitation"
 const eventDescription =
