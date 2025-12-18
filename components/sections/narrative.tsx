@@ -5,6 +5,7 @@ import { Section } from "@/components/section"
 import { siteConfig } from "@/content/site"
 import { motion } from "motion/react"
 import { Cormorant_Garamond } from "next/font/google"
+import Image from "next/image"
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -57,7 +58,7 @@ export function Narrative() {
           <div className="space-y-2 sm:space-y-3">
       
             <h2
-              className="style-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white"
+              className="style-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#FFE4E4]"
               style={{ textShadow: "0 4px 18px rgba(0,0,0,0.85)" }}
             >
               Meet the Couple &amp; Love Story
@@ -134,15 +135,53 @@ export function Narrative() {
             </div>
 
             {/* Active bio */}
-            <div className="space-y-2 pt-2">
-              <p
-                className={`${cormorant.className} text-[0.65rem] sm:text-xs tracking-[0.24em] uppercase text-white/80 text-center`}
+            <motion.div 
+              className="space-y-6 pt-4"
+              key={activePerson}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              {/* Image */}
+              <motion.div 
+                className="relative w-full max-w-md mx-auto aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
               >
-                {activeLabel}
-              </p>
-              <h3 className="style-script-regular text-2xl sm:text-3xl md:text-4xl text-white text-center">
-                {activeName}
-              </h3>
+                <Image
+                  src={activePerson === "bride" ? "/mobile-background/couple (6).jpg" : "/mobile-background/couple (13).jpg"}
+                  alt={activePerson === "bride" ? siteConfig.couple.brideNickname : siteConfig.couple.groomNickname}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  priority
+                />
+                {/* Gradient overlay for text readability at bottom */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#525E2C]/90 via-[#525E2C]/60 via-transparent to-transparent" />
+                
+                {/* Title and Name at the bottom */}
+                <div className="absolute bottom-5 sm:bottom-6 md:bottom-8 left-0 right-0 px-4 sm:px-6 text-center">
+                  <p
+                    className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm tracking-[0.28em] uppercase text-white/95 mb-2 font-medium`}
+                    style={{ textShadow: "0 2px 10px rgba(0,0,0,0.7)" }}
+                  >
+                    {activeLabel}
+                  </p>
+                  <h3 
+                    className="style-script-regular text-2xl sm:text-3xl md:text-4xl text-white leading-tight"
+                    style={{ textShadow: "0 3px 15px rgba(0,0,0,0.8)" }}
+                  >
+                    {activeName}
+                  </h3>
+                </div>
+
+                {/* Decorative corners */}
+                <div className="absolute top-3 right-3 w-8 h-8 border-t-2 border-r-2 border-white/50 rounded-tr-xl" />
+                <div className="absolute bottom-3 left-3 w-8 h-8 border-b-2 border-l-2 border-white/50 rounded-bl-xl" />
+              </motion.div>
+
+              {/* Description below image/title */}
               <div className="space-y-3">
                 {activeParagraphs.map((paragraph, index) => (
                   <p
@@ -153,7 +192,7 @@ export function Narrative() {
                   </p>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </section>
 
           {/* Love Story */}
@@ -164,7 +203,7 @@ export function Narrative() {
               >
                 Love Story
               </p>
-              <h3 className="style-script-regular text-2xl sm:text-3xl md:text-4xl text-white">
+              <h3 className="style-script-regular text-2xl sm:text-3xl md:text-4xl text-[#FFE4E4]">
                 From Classmates to Forever
               </h3>
               <p className="text-xs sm:text-sm md:text-base text-white/90 italic">

@@ -74,6 +74,7 @@ function CountdownUnit({ value, label }: CountdownUnitProps) {
 export function Countdown() {
   const ceremonyDate = siteConfig.ceremony.date
   const ceremonyTimeDisplay = siteConfig.ceremony.time
+  const ceremonyDay = siteConfig.ceremony.day
   const [ceremonyMonth = "June", ceremonyDayRaw = "7", ceremonyYear = "2026"] = ceremonyDate.split(" ")
   const ceremonyDayNumber = ceremonyDayRaw.replace(/[^0-9]/g, "") || "7"
   
@@ -190,7 +191,7 @@ export function Countdown() {
       <div className="relative z-10 text-center mb-6 sm:mb-8 md:mb-10 px-3 sm:px-4">
         {/* Couple names */}
         <p
-          className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] text-[#FDECEF]/85`}
+          className={`${cormorant.className} text-base sm:text-lg md:text-xl lg:text-2xl uppercase tracking-[0.28em] text-[#FDECEF]/85`}
           style={{ textShadow: "0 2px 10px rgba(0,0,0,0.6)" }}
         >
           {siteConfig.couple.groomNickname} &amp; {siteConfig.couple.brideNickname}
@@ -258,7 +259,7 @@ export function Countdown() {
                     <div className="flex flex-1 items-center justify-end gap-1.5 sm:gap-2.5">
                       <span className="h-[0.5px] flex-1 bg-white/45" />
                       <span className="text-[0.6rem] sm:text-[0.7rem] md:text-xs uppercase tracking-[0.3em] sm:tracking-[0.4em] font-light">
-                        Sat
+                        {ceremonyDay.slice(0, 3)}
                       </span>
                       <span className="h-[0.5px] w-6 sm:w-8 md:w-10 bg-white/45" />
                     </div>

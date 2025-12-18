@@ -56,7 +56,7 @@ export function Registry() {
           <div className="w-8 sm:w-12 md:w-16 h-px bg-white/60" />
         </div>
         
-        <h2 className="style-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-2 sm:mb-3 md:mb-4">
+        <h2 className="style-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#FFE4E4] mb-2 sm:mb-3 md:mb-4">
           Gift Guide
         </h2>
         

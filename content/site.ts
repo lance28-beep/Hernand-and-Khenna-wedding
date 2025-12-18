@@ -62,8 +62,7 @@ export const siteConfig = {
     bride: `Khenna is loving and selfless, the calm in the midst of chaos. She is the light that softens him — a dreamer who inspires Hernand to reach even greater heights. Her presence adds color and flavor to his life, turning ordinary moments into something extraordinary. To him, she is not just a partner, but the heart that makes life beautiful.`,
 
     // Shared love story – combined narrative
-    shared: `From Classmates to Forever
-Where it all began…
+    shared: `
 Hernand and Khenna first crossed paths as classmates in college, sharing dreams and laughter before life led them on separate journeys. Hernand pursued his calling in the academy, while Khenna continued to chase her own aspirations.
 Years later, fate brought them back together—and what started as a simple reconnection blossomed into an unexpected love story. Their bond was effortless, their connection organic, and everything fell heavenly into place, as if the universe had been quietly writing their story all along.`,
   },
@@ -81,15 +80,12 @@ export const entourage = [
   // Best Man & Maid/Matron of Honor
   { role: "Best Man", name: "Red Casallo" },
   { role: "Matron of Honor", name: "Imeeliza Timpug" },
-
   // Parents of the Bride
   { role: "Father", name: "Jaime Balajadia (Uncle)", group: "kate-family" },
   { role: "Mother", name: "Eloida Ricohermoso", group: "kate-family" },
-
   // Parents of the Groom
   { role: "Brother", name: "Perry Ticbaen (Brother)", group: "christian-family" },
   { role: "Mother", name: "Felicitas Ticbaen", group: "christian-family" },
-
   // Bridesmaids
   { role: "Bridesmaid", name: "Thea Lynn Dela Cruz" },
   { role: "Bridesmaid", name: "Keara Zane A Cariño" },
@@ -100,7 +96,6 @@ export const entourage = [
   { role: "Bridesmaid", name: "Emmalyn Lipio" },
   { role: "Bridesmaid", name: "Carmen Pascual" },
   { role: "Bridesmaid", name: "Ciddie Manota" },
-
   // Groomsmen
   { role: "Groomsman", name: "Noah Alcaria" },
   { role: "Groomsman", name: "Jervin Garcia" },
@@ -111,19 +106,16 @@ export const entourage = [
   { role: "Groomsman", name: "Vincent Saguinsin" },
   { role: "Groomsman", name: "Frederick Manota" },
   { role: "Groomsman", name: "Emerson Sulit" },
-
   // Secondary Sponsors
   // Candle Sponsors
   { role: "Bridesmaid", name: "Romela Tolentino", group: "candle" },
   // Cord Sponsors
   { role: "Bridesmaid", name: "Emmalyn Lipio", group: "cord" },
-
   // Flower Girls and Little Bride
   { role: "Flower Girl", name: "Kirsten Elija Leyson" },
   { role: "Flower Girl", name: "Blake Juan" },
   { role: "Flower Girl", name: "Reign Arastel Rivera" },
   { role: "Little Bride", name: "Paige Yael Ticbaen" },
-
   // Ring / Coin Bearers
   { role: "Ring Bearer", name: "Khaleb Dwayne M. Beltran" },
   { role: "Coin Bearer", name: "Lucas Rhaiden Beltran" },

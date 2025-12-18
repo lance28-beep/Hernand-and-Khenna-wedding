@@ -47,7 +47,7 @@ export function Welcome() {
                 Hernand &amp; Khenna
               </p>
               <h2
-                className="style-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-[2.9rem] text-white"
+                className="style-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-[2.9rem] text-[#FFE4E4]"
                 style={{ textShadow: "0 4px 18px rgba(0,0,0,0.85)" }}
               >
                 A Celebration of Love, Life, and Forever

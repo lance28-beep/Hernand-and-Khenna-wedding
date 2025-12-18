@@ -130,7 +130,7 @@ export function SnapShare() {
             Share Your Memories
           </div>
           <h2
-            className="style-script-regular text-2xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_40px_rgba(10,0,25,0.8)] mt-3 sm:mt-4"
+            className="style-script-regular text-2xl sm:text-5xl md:text-6xl lg:text-7xl text-[#FFE4E4] drop-shadow-[0_18px_40px_rgba(10,0,25,0.8)] mt-3 sm:mt-4"
           >
             Capture & Share the Celebration
           </h2>

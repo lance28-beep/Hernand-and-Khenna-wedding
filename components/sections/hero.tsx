@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { motion } from "motion/react"
 import { Cormorant_Garamond, WindSong } from "next/font/google"
 import { siteConfig } from "@/content/site"
+import Image from "next/image"
 
 const SHOW_BUTTERFLIES = false
 
@@ -17,12 +18,43 @@ const windSong = WindSong({
   weight: "400",
 })
 
+// Background image paths
+const MOBILE_BACKGROUNDS = Array.from({ length: 13 }, (_, i) => 
+  `/mobile-background/couple (${i + 1}).jpg`
+)
+
+const DESKTOP_BACKGROUNDS = Array.from({ length: 3 }, (_, i) => 
+  `/desktop-background/couple (${i + 1}).jpg`
+)
+
+const TRANSITION_DURATION = 5000 // 5 seconds per image
+
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false)
+  const [currentMobileIndex, setCurrentMobileIndex] = useState(0)
+  const [currentDesktopIndex, setCurrentDesktopIndex] = useState(0)
 
   // Fade in the hero content once the component mounts
   useEffect(() => {
     setIsVisible(true)
+  }, [])
+
+  // Cycle through mobile backgrounds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentMobileIndex((prev) => (prev + 1) % MOBILE_BACKGROUNDS.length)
+    }, TRANSITION_DURATION)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  // Cycle through desktop backgrounds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentDesktopIndex((prev) => (prev + 1) % DESKTOP_BACKGROUNDS.length)
+    }, TRANSITION_DURATION)
+
+    return () => clearInterval(interval)
   }, [])
 
   const [weddingMonth = "June", weddingDayRaw = "7", weddingYear = "2026"] =
@@ -34,10 +66,65 @@ export function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#525E2C]">
       <div className="absolute inset-0 w-full h-full">
-        {/* Image-free hero background using layered gradients */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#3D4636] via-[#525E2C] to-[#3D4636] z-0" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(224,207,181,0.3),transparent_55%)] mix-blend-screen" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(240,240,238,0.28),transparent_35%)] opacity-70 animate-[pulse_9s_ease-in-out_infinite]" />
+        {/* Background images with transitions */}
+        {/* Mobile backgrounds */}
+        <div className="absolute inset-0 md:hidden">
+          {MOBILE_BACKGROUNDS.map((bg, index) => (
+            <motion.div
+              key={bg}
+              className="absolute inset-0"
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: index === currentMobileIndex ? 1 : 0,
+              }}
+              transition={{
+                duration: 1.5,
+                ease: "easeInOut",
+              }}
+            >
+              <Image
+                src={bg}
+                alt={`Background ${index + 1}`}
+                fill
+                className="object-cover"
+                priority={index === 0}
+                quality={85}
+              />
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Desktop backgrounds */}
+        <div className="absolute inset-0 hidden md:block">
+          {DESKTOP_BACKGROUNDS.map((bg, index) => (
+            <motion.div
+              key={bg}
+              className="absolute inset-0"
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: index === currentDesktopIndex ? 1 : 0,
+              }}
+              transition={{
+                duration: 1.5,
+                ease: "easeInOut",
+              }}
+            >
+              <Image
+                src={bg}
+                alt={`Background ${index + 1}`}
+                fill
+                className="object-cover"
+                priority={index === 0}
+                quality={85}
+              />
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#3D4636]/70 via-[#525E2C]/60 to-[#3D4636]/70 z-0" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(224,207,181,0.2),transparent_55%)] mix-blend-screen z-0" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(240,240,238,0.15),transparent_35%)] opacity-70 animate-[pulse_9s_ease-in-out_infinite] z-0" />
       </div>
 
       {SHOW_BUTTERFLIES && (
@@ -379,7 +466,7 @@ export function Hero() {
             <h1
               className="style-script-regular text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl drop-shadow-2xl"
               style={{
-                color: '#FFFFFF',
+                color: "#FFE4E4",
                 textShadow: "0 0 24px rgba(0,0,0,0.9)",
               }}
             >

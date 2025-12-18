@@ -150,7 +150,6 @@ export default function RootLayout({
         <link rel="preload" as="image" href="/desktop-background/DSCF2444-min.jpg" media="(min-width: 768px)" />
       </head>
       <body className={`${inter.variable} ${greatVibes.variable} ${imperialScript.variable} font-inter antialiased text-foreground`}>
-        <Navbar />
         {children}
         <Analytics />
       </body>
