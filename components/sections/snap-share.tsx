@@ -27,7 +27,7 @@ export function SnapShare() {
 
   const hashtags = [
     "#OfficiallyTaKHENbyHERNAND",
-    "#HERNANDfoundHerMagpaKHENlanaman",
+    "#HERNANDfoundHerMagpaKHENlanman",
   ]
 
   const shareText = `Celebrate ${groomNickname} & ${brideNickname}'s wedding! Explore the details and share your special memories: ${websiteUrl} ${hashtags.join(" ")} ✨`

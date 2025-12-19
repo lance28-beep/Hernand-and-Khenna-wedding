@@ -148,14 +148,14 @@ export function BookOfGuests() {
                   <div className="bg-[#525E2C] p-1.5 sm:p-2 rounded-full shadow-lg border border-[#E0CFB5]/80">
                     <Heart className="text-[#F0F0EE] h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
                   </div>
-                  <div className="flex flex-col items-center">
+                  {/* <div className="flex flex-col items-center">
                     <h3 className={`${cormorant.className} text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-[#243127]`}>
                       {totalGuests} {totalGuests === 1 ? "Guest" : "Guests"} Celebrating With Us
                     </h3>
                     <p className={`${cormorant.className} text-[10px] sm:text-xs md:text-sm text-[#556457] mt-0.5`}>
                       {guests.length} {guests.length === 1 ? "RSVP entry" : "RSVP entries"}
                     </p>
-                  </div>
+                  </div> */}
                 </div>
                 <p className={`${cormorant.className} text-[10px] sm:text-xs md:text-sm text-[#37413A] leading-relaxed`}>
                   Thank you for confirming your RSVP! Your presence means the world to us.
