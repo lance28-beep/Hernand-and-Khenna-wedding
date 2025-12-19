@@ -19,7 +19,7 @@ const windSong = WindSong({
 })
 
 // Background image paths
-const MOBILE_BACKGROUNDS = Array.from({ length: 13 }, (_, i) => 
+const MOBILE_BACKGROUNDS = Array.from({ length: 10 }, (_, i) => 
   `/mobile-background/couple (${i + 1}).jpg`
 )
 
