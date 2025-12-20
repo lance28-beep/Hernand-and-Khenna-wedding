@@ -107,7 +107,7 @@ export function MeetTheCouple() {
           <article className="relative overflow-hidden rounded-2xl border border-white/25 bg-white/10 backdrop-blur-xl shadow-[0_18px_50px_rgba(0,0,0,0.55)]">
             <div className="relative h-56 sm:h-60 md:h-64 w-full">
               <Image
-                src="/mobile-background/couple (11).jpg"
+                src="/mobile-background/couple (11d).jpg"
                 alt={siteConfig.couple.groomNickname}
                 fill
                 className="object-cover"
