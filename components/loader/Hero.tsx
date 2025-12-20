@@ -11,17 +11,17 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
   const mobileImages = [
-    '/mobile-background/couple (4).jpg',
-    '/mobile-background/couple (1).jpg',
-    '/mobile-background/couple (6).jpg',
-    '/mobile-background/couple (9).jpg',
-    '/mobile-background/couple (10).jpg',
+    '/mobile-background/couple-4.jpg',
+    '/mobile-background/couple-1.jpg',
+    '/mobile-background/couple-6.jpg',
+    '/mobile-background/couple-9.jpg',
+    '/mobile-background/couple-10.jpg',
   ];
 
   const desktopImages = [
-    '/desktop-background/couple (1).jpg',
-    '/desktop-background/couple (2).jpg',
-    '/desktop-background/couple (3).jpg',
+    '/desktop-background/couple-1.jpg',
+    '/desktop-background/couple-2.jpg',
+    '/desktop-background/couple-3.jpg',
   ];
 
   const [index, setIndex] = useState(0);

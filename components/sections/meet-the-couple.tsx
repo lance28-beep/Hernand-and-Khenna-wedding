@@ -57,7 +57,7 @@ export function MeetTheCouple() {
           <article className="group relative overflow-hidden rounded-2xl md:rounded-3xl border border-white/30 bg-white/10 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.6)] hover:shadow-[0_25px_70px_rgba(0,0,0,0.7)] transition-all duration-500 hover:border-white/40">
             <div className="relative h-64 sm:h-72 md:h-80 w-full overflow-hidden">
               <Image
-                src="/mobile-background/couple (6).jpg"
+                src="/mobile-background/couple-6.jpg"
                 alt={siteConfig.couple.brideNickname}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -107,7 +107,7 @@ export function MeetTheCouple() {
           <article className="relative overflow-hidden rounded-2xl border border-white/25 bg-white/10 backdrop-blur-xl shadow-[0_18px_50px_rgba(0,0,0,0.55)]">
             <div className="relative h-56 sm:h-60 md:h-64 w-full">
               <Image
-                src="/decoration/couple (13).jpg"
+                src="/decoration/couple-13.jpg"
                 alt={siteConfig.couple.groomNickname}
                 fill
                 className="object-cover"

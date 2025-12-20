@@ -150,7 +150,7 @@ export function Narrative() {
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <Image
-                  src={activePerson === "bride" ? "/mobile-background/couple (6).jpg" : "/mobile-background/couple (13).jpg"}
+                  src={activePerson === "bride" ? "/mobile-background/couple-6.jpg" : "/decoration/couple-13.jpg"}
                   alt={activePerson === "bride" ? siteConfig.couple.brideNickname : siteConfig.couple.groomNickname}
                   fill
                   className="object-cover"

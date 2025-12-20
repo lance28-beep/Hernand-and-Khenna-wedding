@@ -227,7 +227,7 @@ export function CoupleVideo() {
                   >
                     {/* Custom poster image */}
                     <Image
-                      src="/desktop-background/couple (12).jpg"
+                      src="/desktop-background/couple-1.jpg"
                       alt="Video thumbnail"
                       fill
                       className="object-cover transform group-hover:scale-105 transition-transform duration-500"
