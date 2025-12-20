@@ -18,7 +18,7 @@ interface FAQItem {
 
 const faqItems: FAQItem[] = [
   {
-    question: "1. When and where will the wedding be held?",
+    question: "1. When and where will the wedding be held??",
     answer:
       `Our wedding will be on Sunday, February 8, 2026, at 4:00 PM. Both the ceremony and reception will be held at Las Casas Filipinas de Acuzar – Quezon City (Casa Cilayko), located at 134 Roosevelt Avenue, San Francisco del Monte, Quezon City, Metro Manila, Philippines.`,
   },
