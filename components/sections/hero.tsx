@@ -19,13 +19,21 @@ const windSong = WindSong({
 })
 
 // Background image paths
-const MOBILE_BACKGROUNDS = Array.from({ length: 10 }, (_, i) => 
-  `/mobile-background/couple (${i + 1}).jpg`
-)
+const DESKTOP_BACKGROUNDS = [
+  "/desktop-background/couple-1.jpg",
+  "/desktop-background/couple-2.jpg",
+  "/desktop-background/couple-3.jpg",
 
-const DESKTOP_BACKGROUNDS = Array.from({ length: 3 }, (_, i) => 
-  `/desktop-background/couple (${i + 1}).jpg`
-)
+]
+
+const MOBILE_BACKGROUNDS = [
+  "/mobile-background/couple-1.jpg",
+  "/mobile-background/couple-2.jpg",
+  "/mobile-background/couple-3.jpg",
+  "/mobile-background/couple-4.jpg",
+  "/mobile-background/couple-5.jpg",
+  "/mobile-background/couple-6.jpg",
+]
 
 const TRANSITION_DURATION = 5000 // 5 seconds per image
 
