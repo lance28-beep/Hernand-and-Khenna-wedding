@@ -74,7 +74,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
 
               <div className="relative z-10 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28">
                 <Image
-                  src="/monogram/newmonogram.png"
+                  src="/monogram/monogramnew.png"
                   alt="Hernand & Khenna Monogram"
                   fill
                   className="object-contain brightness-0 invert"

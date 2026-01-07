@@ -90,7 +90,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
         <FadeIn show={visible} delay={300} className="mb-auto mt-10">
           <div className="relative w-24 h-24 sm:w-28 sm:h-28">
             <Image
-              src="/monogram/newmonogram.png"
+              src="/monogram/monogramnew.png"
               alt="Hernand & Khenna Monogram"
               fill
               className="object-contain brightness-0 invert drop-shadow-[0_0_25px_rgba(255,228,228,0.9)]"
