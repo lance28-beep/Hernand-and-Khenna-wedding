@@ -22,6 +22,7 @@ import { LoadingScreen } from "@/components/loader/LoadingScreen"
 import { Hero as InvitationHero } from "@/components/loader/Hero"
 import { Navbar } from "@/components/navbar"
 import { Gallery } from "@/components/sections/gallery"
+import { CoupleVideo } from "@/components/sections/couple-video"
 
 const Silk = dynamic(() => import("@/components/silk"), { ssr: false })
 const GuestList = dynamic(() => import("@/components/sections/guest-list").then(mod => ({ default: mod.GuestList })), { ssr: false })
@@ -62,7 +63,7 @@ export default function Home() {
             {appState === AppState.DETAILS && <Navbar />}
           <Hero />
           <Welcome />
-          {/* <CoupleVideo /> */}
+          <CoupleVideo />
           <Countdown />
           <Narrative />
           <Gallery />
